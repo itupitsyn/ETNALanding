@@ -1,6 +1,7 @@
 name: Deploy Next.js (Bun Runtime) via SCP
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
 
