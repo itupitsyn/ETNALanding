@@ -6,6 +6,7 @@
   --button-background: #1b1b1b;
   --button-background-hover: #454545;
   --lighter: #e6e6e6;
+  --border: #373737;
 }
 
 @theme inline {
@@ -14,7 +15,9 @@
   --color-foreground: var(--foreground);
   --color-button-background: var(--button-background);
   --color-button-background-hover: var(--button-background-hover);
+  --color-border: var(--border);
   --font-sans: var(--font-inter);
+  --font-pt-root: var(--font-pt-root);
   --breakpoint-xs: 500px;
 }
 
