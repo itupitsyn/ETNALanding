@@ -9,7 +9,7 @@ export const Input: FC<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, 
   return (
     <input
       className={cn(
-        'border-input-border text-input-border border-b border-solid px-1 py-3.5 leading-4.5 font-light tracking-tight transition-colors outline-none',
+        'border-input-border text-input-border placeholder:text-input-border border-b border-solid px-1 py-3.5 leading-4.5 font-light tracking-tight transition-colors outline-none',
         'not-placeholder-shown:border-white not-placeholder-shown:text-white focus:border-white focus:text-white',
         className,
       )}
