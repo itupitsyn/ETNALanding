@@ -20,16 +20,16 @@ export const ETNAHeader: FC = () => {
         bgMaxHclassName,
       )}
     >
-      <div className="xs:flex-row xs:items-end xs:justify-start xs:flex-wrap xs:gap-y-4 container flex flex-col items-start">
-        <ETNALogo className="text-lighter xs:w-76.5 xs:h-22 max-w-full flex-none lg:h-28.5 lg:w-98.5" />
+      <div className="xs:flex-row xs:items-end xs:justify-between xs:gap-y-0 container flex flex-col gap-x-4 gap-y-21">
+        <div className="xs:flex-row xs:items-end xs:gap-y-4 xs:gap-4 flex shrink flex-col items-start gap-4.5 lg:gap-6">
+          <ETNALogo className="text-lighter xs:w-76.5 xs:h-22 max-w-full lg:h-28.5 lg:w-98.5" />
 
-        <p className="text-lighter xs:mt-0 xs:ml-4.25 mt-4 text-2xl leading-none font-light tracking-tighter whitespace-pre-wrap lg:text-[28px]">
-          {'Создаём цифровые\nпродукты, которые меняют\nжизнь к лучшему'}
-        </p>
+          <p className="text-lighter xs:text-[clamp(0.5rem,3vw,1.75rem)] shrink text-2xl leading-6.5 font-light tracking-tighter whitespace-pre lg:text-[28px] lg:leading-7.75">
+            {'Создаём цифровые\nпродукты, которые меняют\nжизнь к лучшему'}
+          </p>
+        </div>
 
-        <Button className="xs:self-end xs:mt-0 xs:ml-auto xs:py-4 mt-21 self-stretch px-10.25 py-3.75 lg:px-12 lg:py-6">
-          Связаться
-        </Button>
+        <Button className="xs:py-4 px-10.25 py-3.75 lg:px-12 lg:py-6">Связаться</Button>
       </div>
     </div>
   );
