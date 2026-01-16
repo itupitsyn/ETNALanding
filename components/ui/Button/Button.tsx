@@ -10,7 +10,7 @@ export const Button: FC<DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement
     <button
       {...props}
       className={cn(
-        'bg-button-background hover:bg-button-background-hover text-lighter leading-none font-light tracking-tighter transition-colors hover:cursor-pointer lg:text-2xl',
+        'bg-button-background hover:bg-button-background-hover text-lighter leading-none font-light tracking-tight transition-colors hover:cursor-pointer lg:text-2xl',
         className,
       )}
     />

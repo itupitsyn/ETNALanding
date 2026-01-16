@@ -8,13 +8,13 @@ import { Button } from '../ui/Button';
 export const ETNAHeader: FC = () => {
   const maxHclassName = 'max-h-231.25 xs:max-h-[471px] lg:max-h-202.5';
   const bgClassName =
-    "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/etna-logo-bg-optimized.png)] before:bg-top before:bg-no-repeat before:content-['']";
+    "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/etna-logo-bg-optimized.png)] before:bg-top before:bg-no-repeat before:content-[''] lg:bg-bottom";
   const bgMaxHclassName = 'before:max-h-231.25 xs:before:max-h-[471px] lg:before:max-h-202.5';
 
   return (
     <div
       className={cn(
-        'xs:pb-4.5 flex h-screen w-full flex-col justify-end pb-14',
+        'xs:pb-4.5 flex h-screen w-full flex-col justify-end pb-14 lg:pb-8',
         bgClassName,
         maxHclassName,
         bgMaxHclassName,

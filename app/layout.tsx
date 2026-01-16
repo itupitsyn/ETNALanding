@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" className="scroll-smooth">
       <body className={cn(inter.variable, pt_root.variable, 'min-w-75 font-sans')}>
         <Navigation />
         {children}

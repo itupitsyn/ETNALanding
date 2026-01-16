@@ -14,10 +14,10 @@ export const Navigation: FC = () => {
           </p>
           <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
             <li>
-              <Link href="#">О нас</Link>
+              <Link href="#about">О нас</Link>
             </li>
             <li>
-              <Link href="#">Проекты</Link>
+              <Link href="#projects">Проекты</Link>
             </li>
           </ul>
         </div>
