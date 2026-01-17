@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import localFont from 'next/font/local';
 
+import { Footer } from '@/components/Footer';
 import { Navigation } from '@/components/Navigation';
 import { cn } from '@/utils/cn';
 
@@ -32,8 +33,13 @@ export default function RootLayout({
   return (
     <html lang="ru" className="scroll-smooth">
       <body className={cn(inter.variable, pt_root.variable, 'min-w-75 font-sans')}>
-        <Navigation />
+        <div className="absolute top-5 left-0 z-10 w-full">
+          <Navigation className="container py-3" />
+        </div>
+
         {children}
+
+        <Footer />
       </body>
     </html>
   );

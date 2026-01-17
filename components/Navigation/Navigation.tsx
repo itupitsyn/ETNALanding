@@ -1,33 +1,46 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
+import { cn } from '@/utils/cn';
+
 import { BurgerMenu } from './components/BurgerMenu';
 
-export const Navigation: FC = () => {
+interface NavigationProps {
+  className?: string;
+}
+
+export const Navigation: FC<NavigationProps> = ({ className }) => {
   return (
-    <div className="absolute top-5 left-0 z-10 w-full">
-      <nav className="text-lighter xs:top-3 container flex w-full justify-between gap-2 py-3 font-light tracking-tighter lg:top-6 lg:text-xl">
-        <div className="xs:gap-10.5 flex gap-8 lg:gap-27">
-          <Link href="/">
-            <span className="font-bold">ETNA</span>
-            <span>SOFTWARE</span>
-          </Link>
-          <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
-            <li>
-              <Link href="/#about">О нас</Link>
-            </li>
-            <li>
-              <Link href="/#projects">Проекты</Link>
-            </li>
-          </ul>
-        </div>
-
-        <Link href="mailto:corp@etna.software" className="xs:block hidden transition-colors hover:text-white">
-          corp@etna.software
+    <nav
+      className={cn(
+        'text-lighter xs:top-3 flex w-full justify-between gap-2 font-light tracking-tighter lg:top-6 lg:text-xl',
+        className,
+      )}
+    >
+      <div className="xs:gap-10.5 flex gap-8 lg:gap-27">
+        <Link href="/" className="transition-colors hover:text-white">
+          <span className="font-bold">ETNA</span>
+          <span>SOFTWARE</span>
         </Link>
+        <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
+          <li>
+            <Link href="/#about" className="transition-colors hover:text-white">
+              О нас
+            </Link>
+          </li>
+          <li>
+            <Link href="/#projects" className="transition-colors hover:text-white">
+              Проекты
+            </Link>
+          </li>
+        </ul>
+      </div>
 
-        <BurgerMenu className="xs:hidden lg:text-2xl" />
-      </nav>
-    </div>
+      <Link href="mailto:corp@etna.software" className="xs:block hidden transition-colors hover:text-white">
+        corp@etna.software
+      </Link>
+
+      <BurgerMenu className="xs:hidden lg:text-2xl" />
+    </nav>
   );
 };

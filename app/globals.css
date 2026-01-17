@@ -9,6 +9,7 @@
   --border: #373737;
   --input-border: #cdcdcd;
   --card-hover-bg: #9c9c9c;
+  --link: #c1c1c1;
 }
 
 @theme inline {
@@ -20,6 +21,7 @@
   --color-border: var(--border);
   --color-input-border: var(--input-border);
   --color-card-hover-bg: var(--card-hover-bg);
+  --color-link: var(--link);
   --font-sans: var(--font-inter);
   --font-pt-root: var(--font-pt-root);
   --breakpoint-xs: 500px;
