@@ -14,7 +14,7 @@ export const ETNAAbout: FC = () => {
       )}
       id="about"
     >
-      <p className="text-lighter xs:max-w-89.5 xs:text-[26px] xs:leading-7.75 max-w-76.25 text-[28px] leading-8 font-light tracking-tighter lg:max-w-152.5 lg:text-[42px] lg:leading-11.5">
+      <p className="text-lighter xs:max-w-89.5 xs:text-[26px] max-w-76.25 text-[28px] leading-[110%] font-light tracking-tighter lg:max-w-152.5 lg:text-[42px]">
         Мы — компания, где идеи превращаются в работающие и востребованные решения.
       </p>
     </div>

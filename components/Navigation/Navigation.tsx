@@ -5,19 +5,19 @@ import { BurgerMenu } from './components/BurgerMenu';
 
 export const Navigation: FC = () => {
   return (
-    <div className="absolute top-5 left-0 w-full">
+    <div className="absolute top-5 left-0 z-10 w-full">
       <nav className="text-lighter xs:top-3 container flex w-full justify-between gap-2 py-3 font-light tracking-tighter lg:top-6 lg:text-xl">
         <div className="xs:gap-10.5 flex gap-8 lg:gap-27">
-          <p>
+          <Link href="/">
             <span className="font-bold">ETNA</span>
             <span>SOFTWARE</span>
-          </p>
+          </Link>
           <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
             <li>
-              <Link href="#about">О нас</Link>
+              <Link href="/#about">О нас</Link>
             </li>
             <li>
-              <Link href="#projects">Проекты</Link>
+              <Link href="/#projects">Проекты</Link>
             </li>
           </ul>
         </div>

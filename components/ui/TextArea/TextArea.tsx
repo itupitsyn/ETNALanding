@@ -11,12 +11,12 @@ export const TextArea: FC<DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaE
     <div
       style={{ '--placeholder-text': placeholder ? `"${placeholder}"` : undefined } as CSSProperties}
       className={
-        'after:text-input-border relative after:pointer-events-none after:absolute after:bottom-5.25 after:left-1 after:leading-4.5 after:content-(--placeholder-text) has-focus:after:hidden has-[:not(:placeholder-shown)]:after:hidden after:lg:text-xl after:lg:leading-5.5'
+        'after:text-input-border relative after:pointer-events-none after:absolute after:bottom-5.25 after:left-1 after:leading-[110%] after:content-(--placeholder-text) has-focus:after:hidden has-[:not(:placeholder-shown)]:after:hidden after:lg:text-xl'
       }
     >
       <textarea
         className={cn(
-          'border-input-border text-input-border w-full border-b border-solid px-1 py-3.5 leading-4.5 font-light tracking-tight transition-colors outline-none lg:text-xl lg:leading-5.5',
+          'border-input-border text-input-border w-full border-b border-solid px-1 py-3.5 leading-[110%] font-light tracking-tight transition-colors outline-none lg:text-xl',
           'not-placeholder-shown:border-white not-placeholder-shown:text-white focus:border-white focus:text-white',
           className,
         )}

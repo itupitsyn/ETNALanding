@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import { cn } from '@/utils/cn';
@@ -13,7 +14,8 @@ export const ETNAProducts: FC = () => {
 
   return (
     <div className="xs:flex-row container flex flex-col gap-2.5 py-8 lg:gap-4 lg:pb-10.5" id="projects">
-      <div
+      <Link
+        href="/movemate"
         className={cn(
           'xs:bg-size-[2000px_auto] bg-[url(/movemate-bg.png)] bg-size-[1500px_auto] bg-position-[53%_40%] bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/movemate-bg.png)]',
           commonCardClass,
@@ -21,10 +23,10 @@ export const ETNAProducts: FC = () => {
       >
         <MovemateLogo className="xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5" />
 
-        <p className="text-lighter xs:text-base xs:leading-4.5 text-[22px] leading-6 tracking-tight whitespace-pre lg:text-[28px] lg:leading-7.75">
+        <p className="text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
           {'Онлайн-сервис\nдля бронирования'}
         </p>
-      </div>
+      </Link>
 
       <div
         className={cn(
@@ -34,7 +36,7 @@ export const ETNAProducts: FC = () => {
       >
         <SecureLogo className="xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5" />
 
-        <p className="text-lighter xs:text-base xs:leading-4.5 text-[22px] leading-6 tracking-tight whitespace-pre lg:text-[28px] lg:leading-7.75">
+        <p className="text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
           {'Персональный VPS\nбез лишних шагов'}
         </p>
       </div>
@@ -59,7 +61,7 @@ export const ETNAProducts: FC = () => {
           <span className="text-lighter relative">Set</span>
         </div>
 
-        <p className="text-lighter xs:text-base xs:leading-4.5 z-1 text-[22px] leading-6 tracking-tight whitespace-pre lg:text-[28px] lg:leading-7.75">
+        <p className="text-lighter xs:text-base z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
           {'Единая платформа\nдля работы с ИИ'}
         </p>
       </div>
