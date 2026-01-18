@@ -41,12 +41,8 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
     const rect = ref.current.getBoundingClientRect();
     const top = rect.top + window.scrollY;
 
-    console.log(document.body.offsetHeight, top);
-
     setIsTop(document.body.offsetHeight - top > 200);
   }, [isMobile]);
-
-  console.log({ isTop });
 
   return (
     <div className={cn('relative', className)} ref={ref}>
