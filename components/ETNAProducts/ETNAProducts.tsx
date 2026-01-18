@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn';
 
 import SecureLogo from '../../assets/icons/etna-secure-logo.svg';
 import MovemateLogo from '../../assets/icons/movemate-logo.svg';
-import neuroLogo from '../../public/neuro-set-logo-bg.png';
+import neuroLogo from '../../public/images/neuro-set-logo-bg.png';
 
 export const ETNAProducts: FC = () => {
   const commonCardClass =
@@ -18,7 +18,7 @@ export const ETNAProducts: FC = () => {
       <Link
         href="/movemate"
         className={cn(
-          'xs:bg-size-[2000px_auto] bg-[url(/movemate-bg.png)] bg-size-[1500px_auto] bg-position-[53%_40%] bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/movemate-bg.png)]',
+          'xs:bg-size-[2000px_auto] bg-[url(/images/movemate-bg.png)] bg-size-[1500px_auto] bg-position-[53%_40%] bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/movemate-bg.png)]',
           commonCardClass,
         )}
       >
@@ -29,9 +29,10 @@ export const ETNAProducts: FC = () => {
         </p>
       </Link>
 
-      <div
+      <Link
+        href="/etna-secure"
         className={cn(
-          'xs:bg-center bg-black bg-[url(/secure-bg.png)] bg-size-[700px_auto] bg-top bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/secure-bg.png)]',
+          'xs:bg-center bg-black bg-[url(/images/secure-bg.png)] bg-size-[700px_auto] bg-top bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/secure-bg.png)]',
           commonCardClass,
         )}
       >
@@ -40,9 +41,10 @@ export const ETNAProducts: FC = () => {
         <p className="text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
           {'Персональный VPS\nбез лишних шагов'}
         </p>
-      </div>
+      </Link>
 
-      <div
+      <Link
+        href="/neuro-set"
         className={cn(
           'group bg-[radial-gradient(77.09%_179.29%_at_-19.41%_94.55%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),radial-gradient(77.09%_179.29%_at_-19.41%_94.55%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)]',
           commonCardClass,
@@ -65,7 +67,7 @@ export const ETNAProducts: FC = () => {
         <p className="text-lighter xs:text-base z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
           {'Единая платформа\nдля работы с ИИ'}
         </p>
-      </div>
+      </Link>
     </div>
   );
 };
