@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import { ID_CONTACT_US } from '@/constants/navigation';
+
 import ArrowIcon from '../../assets/icons/arrow.svg';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
@@ -22,7 +24,7 @@ export const ETNAForm: FC = () => {
 
       <form
         className="xs:grid xs:grid-cols-2 xs:gap-5.5 xs:items-end xs: xs:mt-10.5 xs:max-w-158 mt-15 flex flex-col lg:max-w-none lg:grow"
-        id="contact-us"
+        id={ID_CONTACT_US}
       >
         <Input placeholder="Телефон" />
         <Input placeholder="Почта" className="mt-5.5" />

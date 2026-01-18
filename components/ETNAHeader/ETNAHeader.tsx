@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { ID_CONTACT_US } from '@/constants/navigation';
 import { cn } from '@/utils/cn';
 
 import ETNALogo from '../../assets/icons/etna-logo.svg';
@@ -29,7 +30,10 @@ export const ETNAHeader: FC = () => {
           </p>
         </div>
 
-        <LinkButton className="xs:py-4 flex justify-center px-10.25 py-3.75 lg:px-12 lg:py-6" href="#contact-us">
+        <LinkButton
+          className="xs:py-4 flex justify-center px-10.25 py-3.75 lg:px-12 lg:py-6"
+          href={`#${ID_CONTACT_US}`}
+        >
           Связаться
         </LinkButton>
       </div>

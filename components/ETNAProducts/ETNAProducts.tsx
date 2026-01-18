@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
+import { ID_PROJECTS } from '@/constants/navigation';
 import { cn } from '@/utils/cn';
 
 import SecureLogo from '../../assets/icons/etna-secure-logo.svg';
@@ -13,7 +14,7 @@ export const ETNAProducts: FC = () => {
     'xs:aspect-auto xs:h-[391px] xs:px-2.5 xs:py-3 xs:grow relative flex aspect-square flex-col items-start justify-end px-6 py-5.5 overflow-hidden lg:px-4.5 lg:py-5.5 lg:h-[694px] hover:cursor-pointer';
 
   return (
-    <div className="xs:flex-row container flex flex-col gap-2.5 py-8 lg:gap-4 lg:pb-10.5" id="projects">
+    <div className="xs:flex-row container flex flex-col gap-2.5 py-8 lg:gap-4 lg:pb-10.5" id={ID_PROJECTS}>
       <Link
         href="/movemate"
         className={cn(

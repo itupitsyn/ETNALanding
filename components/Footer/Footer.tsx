@@ -1,13 +1,8 @@
 import { FC } from 'react';
 
-import { Navigation } from '../Navigation';
+import { navigationLinks } from '@/constants/navigation';
 
-const links = [
-  { id: 0, text: 'Политика конфиденциальности' },
-  { id: 1, text: 'Согласие на рекламную рассылку' },
-  { id: 2, text: 'Согласие на обработку персональных данных' },
-  { id: 3, text: 'Юридическая информация' },
-];
+import { Navigation } from '../Navigation';
 
 export const Footer: FC = () => {
   return (
@@ -15,7 +10,7 @@ export const Footer: FC = () => {
       <Navigation />
 
       <div className="gap xs:gap-x-8 xs:flex hidden flex-wrap gap-y-3 lg:gap-x-10.75 lg:gap-y-4">
-        {links.map((item) => (
+        {navigationLinks.map((item) => (
           <button
             key={item.id}
             className="text-link cursor-pointer text-[14px] leading-[120%] tracking-tight transition-colors hover:text-white lg:text-[18px]"

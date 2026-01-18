@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
+import { ID_ABOUT, ID_PROJECTS } from '@/constants/navigation';
 import { cn } from '@/utils/cn';
 
 import { BurgerMenu } from './components/BurgerMenu';
@@ -24,12 +25,12 @@ export const Navigation: FC<NavigationProps> = ({ className }) => {
         </Link>
         <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
           <li>
-            <Link href="/#about" className="transition-colors hover:text-white">
+            <Link href={`/#${ID_ABOUT}`} className="transition-colors hover:text-white">
               О нас
             </Link>
           </li>
           <li>
-            <Link href="/#projects" className="transition-colors hover:text-white">
+            <Link href={`/#${ID_PROJECTS}`} className="transition-colors hover:text-white">
               Проекты
             </Link>
           </li>

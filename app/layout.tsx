@@ -17,7 +17,7 @@ const inter = Inter({
 
 const pt_root = localFont({
   src: '../assets/fonts/PT Root UI_VF.woff2',
-  variable: '--font-pt-root',
+  variable: '--pt-root',
 });
 
 export const metadata: Metadata = {
