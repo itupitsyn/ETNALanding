@@ -1,3 +1,11 @@
+import { NeuroSetFeatures } from '@/components/NeuroSetFeatures';
+import { NeuroSetHeader } from '@/components/NeuroSetHeader';
+
 export default function Page() {
-  return <div></div>;
+  return (
+    <>
+      <NeuroSetHeader />
+      <NeuroSetFeatures />
+    </>
+  );
 }
