@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils/cn';
 
-import SecureLogo from '../../assets/icons/etna-secure-logo.svg';
+import SecureLogo from '../../lib/assets/icons/etna-secure-logo.svg';
 
 export const ETNASecureHeader: FC = () => {
   return (

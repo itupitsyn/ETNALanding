@@ -11,6 +11,7 @@
   --card-hover-bg: #9c9c9c;
   --link: #c1c1c1;
   --menu-text: #858585;
+  --error: #fe2b25;
 }
 
 @theme inline {
@@ -24,6 +25,7 @@
   --color-card-hover-bg: var(--card-hover-bg);
   --color-link: var(--link);
   --color-menu-text: var(--menu-text);
+  --color-error: var(--error);
   --font-sans: var(--font-inter);
   --font-pt-root: var(--pt-root);
   --breakpoint-xs: 500px;

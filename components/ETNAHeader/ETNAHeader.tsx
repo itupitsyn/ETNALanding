@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import { ID_CONTACT_US } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { ID_CONTACT_US } from '@/lib/constants/navigation';
+import { cn } from '@/lib/utils/cn';
 
-import ETNALogo from '../../assets/icons/etna-logo.svg';
+import ETNALogo from '../../lib/assets/icons/etna-logo.svg';
 import { LinkButton } from '../ui/LinkButton';
 
 export const ETNAHeader: FC = () => {

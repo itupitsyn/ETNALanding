@@ -1,6 +1,6 @@
 import { FC, Fragment } from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils/cn';
 
 interface FeaturesCommonProps {
   features: {

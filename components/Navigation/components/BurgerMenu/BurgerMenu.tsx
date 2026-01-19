@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { FC, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'usehooks-ts';
 
-import { ID_ABOUT, ID_PROJECTS, navigationLinks } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { ID_ABOUT, ID_PROJECTS, navigationLinks } from '@/lib/constants/navigation';
+import { cn } from '@/lib/utils/cn';
 
-import IconCross from '../../../../assets/icons/cross.svg';
+import IconCross from '../../../../lib/assets/icons/cross.svg';
 
 interface BurgerMenuProps {
   className?: string;

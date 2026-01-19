@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { ID_ABOUT } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { ID_ABOUT } from '@/lib/constants/navigation';
+import { cn } from '@/lib/utils/cn';
 
 export const ETNAAbout: FC = () => {
   const bgClassName =

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { navigationLinks } from '@/constants/navigation';
+import { navigationLinks } from '@/lib/constants/navigation';
 
 import { Navigation } from '../Navigation';
 

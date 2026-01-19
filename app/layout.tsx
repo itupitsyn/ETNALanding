@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 
 import { Footer } from '@/components/Footer';
 import { Navigation } from '@/components/Navigation';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils/cn';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 const pt_root = localFont({
-  src: '../assets/fonts/PT Root UI_VF.woff2',
+  src: '../lib/assets/fonts/PT Root UI_VF.woff2',
   variable: '--pt-root',
 });
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import MovemateLogo from '../../assets/icons/movemate-logo.svg';
+import MovemateLogo from '../../lib/assets/icons/movemate-logo.svg';
 
 export const MovemateHeader: FC = () => {
   return (

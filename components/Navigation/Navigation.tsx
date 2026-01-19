@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { ID_ABOUT, ID_PROJECTS } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { ID_ABOUT, ID_PROJECTS } from '@/lib/constants/navigation';
+import { cn } from '@/lib/utils/cn';
 
 import { BurgerMenu } from './components/BurgerMenu';
 

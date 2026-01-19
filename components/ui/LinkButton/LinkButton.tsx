@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AnchorHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils/cn';
 
 export const LinkButton: FC<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>> = ({
   className,

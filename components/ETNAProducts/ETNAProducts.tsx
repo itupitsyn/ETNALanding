@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { ID_PROJECTS } from '@/constants/navigation';
-import { cn } from '@/utils/cn';
+import { ID_PROJECTS } from '@/lib/constants/navigation';
+import { cn } from '@/lib/utils/cn';
 
-import SecureLogo from '../../assets/icons/etna-secure-logo.svg';
-import MovemateLogo from '../../assets/icons/movemate-logo.svg';
+import SecureLogo from '../../lib/assets/icons/etna-secure-logo.svg';
+import MovemateLogo from '../../lib/assets/icons/movemate-logo.svg';
 import neuroLogo from '../../public/images/neuro-set-logo-bg.png';
 
 export const ETNAProducts: FC = () => {

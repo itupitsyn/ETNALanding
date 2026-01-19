@@ -1,12 +1,19 @@
-import { CSSProperties, DetailedHTMLProps, FC, TextareaHTMLAttributes } from 'react';
+import { CSSProperties, DetailedHTMLProps, forwardRef, ForwardRefRenderFunction, TextareaHTMLAttributes } from 'react';
 
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils/cn';
 
-export const TextArea: FC<DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>> = ({
-  className,
-  placeholder,
-  ...props
-}) => {
+interface TextareaComponentProps extends DetailedHTMLProps<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> {
+  isInvalid?: boolean;
+  errorText?: string;
+}
+
+const Component: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaComponentProps> = (
+  { className, placeholder, isInvalid, errorText, ...props },
+  ref,
+) => {
   return (
     <div
       style={{ '--placeholder-text': placeholder ? `"${placeholder}"` : undefined } as CSSProperties}
@@ -15,14 +22,23 @@ export const TextArea: FC<DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaE
       }
     >
       <textarea
+        ref={ref}
         className={cn(
-          'border-input-border text-input-border w-full border-b border-solid px-1 py-3.5 leading-[110%] font-light tracking-tight transition-colors outline-none lg:text-xl',
-          'not-placeholder-shown:border-white not-placeholder-shown:text-white focus:border-white focus:text-white',
+          'text-input-border w-full border-b border-solid px-1 py-3.5 leading-[110%] font-light tracking-tight transition-colors outline-none lg:text-xl',
+          'not-placeholder-shown:text-white focus:text-white',
+          isInvalid ? 'border-error' : 'border-input-border not-placeholder-shown:border-white focus:border-white',
+
           className,
         )}
         placeholder=" "
         {...props}
       />
+
+      {errorText && (
+        <div className="text-error absolute top-full left-0 text-xs leading-[120%] font-light">{errorText}</div>
+      )}
     </div>
   );
 };
+
+export const TextArea = forwardRef(Component);
