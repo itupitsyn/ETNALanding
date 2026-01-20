@@ -1,22 +1,15 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import Link from 'next/link';
-import { FC, useCallback, useState } from 'react';
-import { Controller, FormProvider, SubmitHandler, useForm } from 'react-hook-form';
-import { useMediaQuery } from 'usehooks-ts';
+import { FC, useCallback, useEffect, useState } from 'react';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { sendRequest } from '@/app/request-action';
 import { ID_CONTACT_US } from '@/lib/constants/navigation';
 import { inputSchema } from '@/lib/constants/rquestForm';
 
-import ArrowIcon from '../../lib/assets/icons/arrow.svg';
-import { Button } from '../ui/Button';
-import { Checkbox } from '../ui/Checkbox';
-import { Input } from '../ui/Input';
-import { MaskedInput } from '../ui/MaskedInput';
-import { TextArea } from '../ui/TextArea';
+import { Modal } from '../ui/Modal';
 import {
   AgreementCheckbox,
   EmailInput,
@@ -30,6 +23,7 @@ import {
 export type RequestFormData = z.infer<typeof inputSchema>;
 
 export const ETNAForm: FC = () => {
+  const [isSuccess, setIsSuccess] = useState(false);
   const [unexpectedError, setUnexpectedError] = useState('');
 
   const methods = useForm<RequestFormData>({
@@ -46,26 +40,41 @@ export const ETNAForm: FC = () => {
   const {
     reset,
     handleSubmit,
-    control,
-    formState: { isSubmitting },
+    formState: { isSubmitSuccessful },
   } = methods;
 
-  const onSubmit: SubmitHandler<RequestFormData> = useCallback(
-    async (formData) => {
-      try {
-        const res = await sendRequest(formData);
-        const { validationErrors, serverError } = res;
-        if (!validationErrors && !serverError) {
-          reset(undefined, { keepErrors: false });
-          return;
-        }
-        setUnexpectedError('Неизвестная ошибка');
-      } catch {
-        setUnexpectedError('Неизвестная ошибка');
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset(undefined, {
+        keepErrors: false,
+        keepDefaultValues: true,
+        keepDirty: false,
+        keepDirtyValues: false,
+        keepIsSubmitted: false,
+        keepIsValid: false,
+        keepSubmitCount: false,
+        keepTouched: false,
+        keepIsSubmitSuccessful: false,
+        keepIsValidating: false,
+        keepValues: false,
+        keepFieldsRef: false,
+      });
+    }
+  }, [isSubmitSuccessful, reset]);
+
+  const onSubmit: SubmitHandler<RequestFormData> = useCallback(async (formData) => {
+    try {
+      const res = await sendRequest(formData);
+      const { validationErrors, serverError } = res;
+      if (!validationErrors && !serverError) {
+        setIsSuccess(true);
+        return;
       }
-    },
-    [reset],
-  );
+      setUnexpectedError('Неизвестная ошибка');
+    } catch {
+      setUnexpectedError('Неизвестная ошибка');
+    }
+  }, []);
 
   return (
     <FormProvider {...methods}>
@@ -83,7 +92,7 @@ export const ETNAForm: FC = () => {
         </div>
 
         <form
-          className="xs:mt-10.5 xs:self-stretch mt-15 flex flex-col lg:mt-0 lg:max-w-none lg:grow"
+          className="xs:mt-10.5 xs:self-stretch mt-15 flex flex-col lg:mt-0 lg:max-w-none lg:min-w-137.5 lg:grow"
           id={ID_CONTACT_US}
           noValidate
           onSubmit={handleSubmit(onSubmit)}
@@ -112,7 +121,8 @@ export const ETNAForm: FC = () => {
             <SubmitButton className="justify-self-start" />
           </div>
 
-          <div className="xs:block hidden lg:hidden">
+          <div className="xs:grid hidden grid-cols-[minmax(0,305px)_minmax(0,500px)] gap-5.5 pt-3 lg:hidden">
+            <div className="" />
             <AgreementCheckbox />
           </div>
 
@@ -129,6 +139,19 @@ export const ETNAForm: FC = () => {
           </div>
         </form>
       </div>
+
+      <Modal isOpen={!!unexpectedError} onClose={() => setUnexpectedError('')} className="xs:w-auto w-full">
+        {unexpectedError}
+      </Modal>
+      <Modal
+        isOpen={isSuccess}
+        onClose={() => setIsSuccess(false)}
+        className="xs:w-auto flex w-full items-center justify-center lg:h-61 lg:w-128.75"
+      >
+        <div className="text-center leading-[110%] tracking-tight whitespace-pre lg:text-2xl">
+          {'Ваше сообщение отправлено,\nнаша команда свяжется с Вами\nв скором времени.'}
+        </div>
+      </Modal>
     </FormProvider>
   );
 };

@@ -6,8 +6,6 @@ import { inputSchema } from '@/lib/constants/rquestForm';
 import prisma from '@/lib/prisma';
 import { actionClient } from '@/lib/utils/safe-action';
 
-// This schema is used to validate input from client.
-
 export const sendRequest = actionClient
   .inputSchema(inputSchema)
   .action(async ({ parsedInput: { email, message, name, phoneNumber, theme } }) => {
