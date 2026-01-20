@@ -51,6 +51,7 @@ jobs:
               --name etna-landing \
               --restart always \
               -p 3500:3000 \
+              -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
               etna-landing
             
             # Очистка

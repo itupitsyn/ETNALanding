@@ -12,6 +12,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# Добавляем ARG, чтобы принять значение из воркфлоу
+ARG DATABASE_URL
+# Делаем её доступной для процесса сборки
+ENV DATABASE_URL=$DATABASE_URL
+
+RUN bunx prisma generate
 RUN bun run build
 
 # 3. Финальный образ
