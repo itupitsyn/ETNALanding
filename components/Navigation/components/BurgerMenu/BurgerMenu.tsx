@@ -100,14 +100,15 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
             <ul className="flex flex-col items-start gap-3">
               {navigationLinks.map((item) => (
                 <li key={item.id}>
-                  <button
+                  <Link
+                    href={item.href}
                     onClick={() => {
                       setIsOpen(false);
                     }}
                     className="text-menu-text cursor-pointer text-left text-[18px] leading-[120%] tracking-tight transition-colors hover:text-white"
                   >
                     {item.text}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
