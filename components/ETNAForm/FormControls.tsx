@@ -117,7 +117,7 @@ export const AgreementCheckbox: FC<{ className?: string }> = ({ className }) => 
         >
           <span className="text-sm leading-[110%] tracking-tight lg:pt-0.5 lg:text-base">
             Даю{' '}
-            <Link href="" className="underline underline-offset-2 transition-colors hover:text-white">
+            <Link href="/consent" className="underline underline-offset-2 transition-colors hover:text-white">
               согласие
             </Link>{' '}
             на обработку персональных данных
