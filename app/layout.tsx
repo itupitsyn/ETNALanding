@@ -21,7 +21,6 @@ const pt_root = localFont({
 });
 
 export const metadata: Metadata = {
-  manifest: '/site.webmanifest',
   title: 'ETNA',
   description: 'Создаём цифровые продукты, которые меняют жизнь к лучшему',
 
