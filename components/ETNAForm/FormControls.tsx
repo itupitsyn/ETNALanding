@@ -115,7 +115,7 @@ export const AgreementCheckbox: FC<{ className?: string }> = ({ className }) => 
           errorText={error?.message}
           className={className}
         >
-          <span className="xs::text-sm">
+          <span className="text-sm leading-[110%] tracking-tight lg:pt-0.5 lg:text-base">
             Даю{' '}
             <Link href="" className="underline underline-offset-2 transition-colors hover:text-white">
               согласие
