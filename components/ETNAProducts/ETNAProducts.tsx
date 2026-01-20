@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { ID_PROJECTS } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils/cn';
@@ -10,11 +13,15 @@ import MovemateLogo from '../../lib/assets/icons/movemate-logo.svg';
 import neuroLogo from '../../public/images/neuro-set-logo-bg.png';
 
 export const ETNAProducts: FC = () => {
-  const commonCardClass =
-    'xs:aspect-auto xs:h-[391px] xs:px-2.5 xs:py-3 xs:grow relative flex aspect-square flex-col items-start justify-end px-6 py-5.5 overflow-hidden lg:px-4.5 lg:py-5.5 lg:h-[694px] hover:cursor-pointer';
+  const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  const commonCardClass = cn(
+    'xs:aspect-auto xs:h-[391px] xs:px-2.5 xs:py-3 xs:grow relative flex aspect-square flex-col items-start justify-end px-6 py-5.5 overflow-hidden lg:px-4.5 lg:py-5.5 lg:h-[694px] hover:cursor-pointer',
+    'transition-transform duration-300 hover:scale-103',
+  );
 
   return (
-    <div className="xs:flex-row container flex flex-col gap-2.5 py-8 lg:gap-4 lg:pb-10.5" id={ID_PROJECTS}>
+    <div ref={ref} id={ID_PROJECTS} className="xs:flex-row container flex flex-col gap-2.5 py-8 lg:gap-4 lg:pb-10.5">
       <Link
         href="/movemate"
         className={cn(
@@ -22,9 +29,19 @@ export const ETNAProducts: FC = () => {
           commonCardClass,
         )}
       >
-        <MovemateLogo className="xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5" />
+        <MovemateLogo
+          className={cn(
+            'xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
+            isInView ? 'animate-appear' : 'opacity-0',
+          )}
+        />
 
-        <p className="text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
+        <p
+          className={cn(
+            'text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            isInView ? 'animate-appear-right' : 'opacity-0',
+          )}
+        >
           {'Онлайн-сервис\nдля бронирования'}
         </p>
       </Link>
@@ -36,9 +53,19 @@ export const ETNAProducts: FC = () => {
           commonCardClass,
         )}
       >
-        <SecureLogo className="xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5" />
+        <SecureLogo
+          className={cn(
+            'xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
+            isInView ? 'animate-appear [animation-delay:300ms]' : 'opacity-0',
+          )}
+        />
 
-        <p className="text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
+        <p
+          className={cn(
+            'text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            isInView ? 'animate-appear-right [animation-delay:200ms]' : 'opacity-0',
+          )}
+        >
           {'Персональный VPS\nбез лишних шагов'}
         </p>
       </Link>
@@ -53,18 +80,31 @@ export const ETNAProducts: FC = () => {
         <Image
           src={neuroLogo}
           alt=""
-          className="xs:left-[calc(50%+3px)] absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5"
+          className={cn(
+            'xs:left-[calc(50%+3px)] absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5',
+            isInView ? 'animate-appear [animation-delay:600ms]' : 'opacity-0',
+          )}
         />
         <div className="xs:left-[calc(50%+3px)] group-hover:bg-card-hover-bg/30 absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5" />
 
-        <div className="font-pt-root xs:text-[32px] absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[40px] leading-none tracking-tight lg:text-[56px]">
+        <div
+          className={cn(
+            'font-pt-root xs:text-[32px] absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[40px] leading-none tracking-tight lg:text-[56px]',
+            isInView ? 'animate-appear [animation-delay:600ms]' : 'opacity-0',
+          )}
+        >
           <span className="bg-[linear-gradient(337.78deg,rgba(89,96,112,0)_38.41%,rgba(89,96,112,0.8)_106.93%),linear-gradient(0deg,#E6E6E6,#E6E6E6)] bg-clip-text text-transparent">
             Нейро
           </span>
           <span className="text-lighter relative">Set</span>
         </div>
 
-        <p className="text-lighter xs:text-base z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]">
+        <p
+          className={cn(
+            'text-lighter xs:text-base z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            isInView ? 'animate-appear-right [animation-delay:400ms]' : 'opacity-0',
+          )}
+        >
           {'Единая платформа\nдля работы с ИИ'}
         </p>
       </Link>

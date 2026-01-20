@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { cn } from '@/lib/utils/cn';
+import { formatPhone } from '@/lib/utils/form';
 
 import ArrowIcon from '../../lib/assets/icons/arrow.svg';
 import { Button } from '../ui/Button';
 import { Checkbox } from '../ui/Checkbox';
 import { Input } from '../ui/Input';
-import { MaskedInput } from '../ui/MaskedInput';
 import { TextArea } from '../ui/TextArea';
 import { RequestFormData } from './ETNAForm';
 
@@ -20,16 +20,15 @@ export const PhoneInput: FC = () => {
       control={control}
       name="phoneNumber"
       render={({ field, fieldState: { invalid, error } }) => (
-        <MaskedInput
+        <Input
           {...field}
-          onAccept={field.onChange}
-          onChange={undefined}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            const formatted = formatPhone(e.target.value);
+            field.onChange(formatted);
+          }}
           isInvalid={invalid}
           errorText={error?.message}
           placeholder="Телефон"
-          mask={'+7 (000) 000-00-00'}
-          unmask
-          overwrite
         />
       )}
     />

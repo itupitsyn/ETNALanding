@@ -3,11 +3,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { useInView } from 'react-intersection-observer';
 import { z } from 'zod';
 
 import { sendRequest } from '@/app/request-action';
 import { ID_CONTACT_US } from '@/lib/constants/navigation';
 import { inputSchema } from '@/lib/constants/rquestForm';
+import { cn } from '@/lib/utils/cn';
 
 import { Modal } from '../ui/Modal';
 import {
@@ -23,6 +25,8 @@ import {
 export type RequestFormData = z.infer<typeof inputSchema>;
 
 export const ETNAForm: FC = () => {
+  const [ref, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
+
   const [isSuccess, setIsSuccess] = useState(false);
   const [unexpectedError, setUnexpectedError] = useState('');
 
@@ -78,13 +82,26 @@ export const ETNAForm: FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="xs:items-start container flex flex-col pb-30 lg:flex-row lg:justify-between lg:gap-x-19">
+      <div
+        ref={ref}
+        className="xs:items-start container flex flex-col pb-30 lg:flex-row lg:justify-between lg:gap-x-19"
+      >
         <div className="xs:max-w-158 lg:max-w-145.5">
-          <h2 className="xs:text-[40px] text-[32px] leading-[110%] tracking-tight lg:text-[46px]">
+          <h2
+            className={cn(
+              'xs:text-[40px] text-[32px] leading-[110%] tracking-tight lg:text-[46px]',
+              isInView ? 'animate-appear' : 'opacity-0',
+            )}
+          >
             Мы открыты для смелых идей и коллабораций.
           </h2>
 
-          <p className="xs:text-[26px] xs:font-light text-[18px] leading-[110%] tracking-tight lg:text-[32px] lg:tracking-tighter">
+          <p
+            className={cn(
+              'xs:text-[26px] xs:font-light text-[18px] leading-[110%] tracking-tight lg:text-[32px] lg:tracking-tighter',
+              isInView ? 'animate-appear [animation-delay:300ms]' : 'opacity-0',
+            )}
+          >
             <br />
             Если вы ищете сильную продуктовую команду для реализации вашего проекта или хотите присоединиться к нашей —
             давайте обсудим возможности.

@@ -18,11 +18,13 @@ export const ETNAHeader: FC = () => {
       <div className="xs:pb-4.5 flex h-full flex-col justify-end pb-14 lg:pb-8">
         <div className="xs:flex-row xs:items-end xs:justify-between xs:gap-y-0 flex flex-col gap-x-4 gap-y-21">
           <div className="xs:flex-row xs:items-end xs:gap-y-4 xs:gap-4 flex shrink flex-col items-start gap-4.5 lg:gap-6">
-            <ETNALogo className="text-lighter xs:w-76.5 xs:h-22 max-w-full lg:h-28.5 lg:w-98.5" />
+            <ETNALogo className="text-lighter xs:w-76.5 xs:h-22 animate-appear-right max-w-full lg:h-28.5 lg:w-98.5" />
 
-            <p className="text-lighter xs:text-[clamp(0.5rem,3vw,1.75rem)] shrink text-2xl leading-[110%] font-light tracking-tighter whitespace-pre lg:text-[28px]">
-              {'Создаём цифровые\nпродукты, которые меняют\nжизнь к лучшему'}
-            </p>
+            <div className="text-lighter xs:text-[clamp(0.5rem,3vw,1.75rem)] shrink text-2xl leading-[110%] font-light tracking-tighter whitespace-pre lg:text-[28px]">
+              <p className="animate-appear [animation-delay:300ms]">Создаём цифровые</p>
+              <p className="animate-appear [animation-delay:600ms]">продукты, которые меняют</p>
+              <p className="animate-appear [animation-delay:900ms]">жизнь к лучшему</p>
+            </div>
           </div>
 
           <ContactUsButton />
