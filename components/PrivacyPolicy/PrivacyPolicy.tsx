@@ -1,14 +1,13 @@
-const lpHeading = 'mt-10 mb-5 xs:text-[40px] text-[22px] lg:text-[46px] leading-[120%] font-bold';
-const lpl = 'flex list-disc flex-col gap-4 pl-5';
-const lplnested = 'flex list-disc flex-col gap-4 pl-5 pt-4';
-const olplnested = 'flex list-decimal flex-col gap-4 pl-5 pt-4';
+import { FC } from 'react';
 
-const PrivacyPolicy = () => {
+import { lpAnchor, lpdlnested, lph1, lpHeading, lpl, lplnested } from '@/lib/constants/classes';
+
+export const PrivacyPolicy: FC = () => {
   return (
-    <main className="text-lighter container pt-25 pb-15 tracking-tight">
+    <main className="text-lighter container pt-25 tracking-tight">
       <section>
         <div className="mx-auto max-w-225">
-          <h1 className="xs:text-[40px] mb-5 text-2xl font-bold lg:text-5xl">Политика конфиденциальности</h1>
+          <h1 className={lph1}>Политика конфиденциальности</h1>
           <p className="mb-10 leading-[110%] opacity-70 lg:text-[20px]">Редакция от 17.12.2025 г.</p>
 
           <div>
@@ -142,7 +141,7 @@ const PrivacyPolicy = () => {
               </li>
               <li>
                 <strong>Какие файлы cookie использует Оператор:</strong>
-                <ul className={olplnested}>
+                <ul className={lpdlnested}>
                   <li>
                     <strong>Технические (необходимые)</strong> - Необходимы для функционирования Сайта, его удобного
                     использования, обеспечения навигации по страницам.
@@ -182,7 +181,7 @@ const PrivacyPolicy = () => {
 
             <h2 className={lpHeading}>Права субъектов персональных данных</h2>
             <p className="">Субъект персональных данных может воспользоваться правами:</p>
-            <ul className={olplnested}>
+            <ul className={lpdlnested}>
               <li>
                 <strong>Право на доступ</strong> - У Субъекта есть право запросить копию персональных данных.
               </li>
@@ -220,14 +219,14 @@ const PrivacyPolicy = () => {
                 <strong>
                   Перечень третьих лиц, которым может быть поручена обработка и могут быть переданы персональные данные:
                 </strong>
-                <ul className={olplnested}>
+                <ul className={lpdlnested}>
                   <li>
                     <strong>Яндекс метрика</strong> (ООО «Яндекс», политика конфиденциальности по адресу:{' '}
                     <a
                       href="https://yandex.ru/legal/confidential"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline transition-colors hover:text-white"
+                      className={lpAnchor}
                     >
                       https://yandex.ru/legal/confidentia
                     </a>
@@ -311,7 +310,7 @@ const PrivacyPolicy = () => {
               <li>
                 По вопросам, в отношении обработки персональных данных и для реализации прав Субъект может обратиться к
                 Оператору по электронной почте{' '}
-                <a href="mailto:corp@etna.software" className="underline transition-colors hover:text-white">
+                <a href="mailto:corp@etna.software" className={lpAnchor}>
                   corp@etna.software
                 </a>
                 .
@@ -370,5 +369,3 @@ const PrivacyPolicy = () => {
     </main>
   );
 };
-
-export default PrivacyPolicy;
