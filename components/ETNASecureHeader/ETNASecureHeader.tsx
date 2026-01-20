@@ -14,9 +14,9 @@ export const ETNASecureHeader: FC = () => {
         'before:absolute before:top-0 before:left-0 before:-z-1 before:h-full before:w-full before:bg-[linear-gradient(181.28deg,#050505_79.82%,#373737_137.68%,#575757_556.58%)]',
       )}
     >
-      <SecureLogo className="xs:w-95.5 absolute top-1/2 left-1/2 h-auto w-77 -translate-1/2 lg:w-140" />
+      <SecureLogo className="xs:w-95.5 animate-appear-right absolute top-1/2 left-1/2 h-auto w-77 -translate-1/2 lg:w-140" />
 
-      <p className="text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre lg:text-[28px]">
+      <p className="text-lighter animate-appear text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
         {'Персональный VPS\nбез лишних шагов'}
       </p>
     </div>

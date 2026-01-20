@@ -1,5 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import { FC } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+import { cn } from '@/lib/utils/cn';
 
 import { FeaturesCommon } from '../FeaturesCommon';
 
@@ -18,11 +23,13 @@ const features = [
 ];
 
 export const ETNASecureFeatures: FC = () => {
+  const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
+
   return (
     <>
       <FeaturesCommon features={features} />
 
-      <div className="container">
+      <div ref={ref} className={cn('container', isInView ? 'animate-appear' : 'opacity-0')}>
         <Image
           src="/images/smartphone.png"
           alt="tennis"
