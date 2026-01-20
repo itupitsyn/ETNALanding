@@ -59,7 +59,12 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
       </button>
 
       {isOpen && (
-        <div className={cn('bg-background absolute -right-4 w-screen max-w-88', isTop ? '-top-6' : '-bottom-4')}>
+        <div
+          className={cn(
+            'bg-background animate-appear absolute -right-4 w-screen max-w-88',
+            isTop ? '-top-6' : '-bottom-4',
+          )}
+        >
           <div className="relative flex flex-col gap-10.5 px-7 py-10">
             <button
               className={cn('absolute right-6 cursor-pointer', isTop ? 'top-6' : 'bottom-6')}

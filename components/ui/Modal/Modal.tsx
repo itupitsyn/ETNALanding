@@ -27,7 +27,7 @@ export const Modal: FC<ModalProps> = ({ isOpen, onClose, children, className }) 
   }
 
   return createPortal(
-    <div className="fixed top-0 left-0 z-50 flex h-svh w-svw items-center justify-center backdrop-brightness-50">
+    <div className="animate-appear fixed top-0 left-0 z-50 flex h-svh w-svw items-center justify-center backdrop-brightness-50">
       <div className={cn('bg-background relative py-10.5 pr-15.75 pl-12', className)}>
         <button
           className="absolute top-6 right-6 cursor-pointer transition-colors hover:cursor-pointer hover:text-white"

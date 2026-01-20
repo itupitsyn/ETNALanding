@@ -1,12 +1,15 @@
 import validator from 'validator';
 import { z } from 'zod';
 
+import { getCleanPhoneNumber } from '../utils/form';
+
 // This schema is used to validate input from client.
 export const inputSchema = z.object({
   phoneNumber: z
     .string({ error: 'Обязательное поле' })
     .trim()
     .min(1, { error: 'Обязательное поле' })
+    .transform(getCleanPhoneNumber)
     .refine(validator.isMobilePhone, { error: 'Некорректный формат' }),
   email: z
     .email({ pattern: z.regexes.unicodeEmail, error: 'Некорректный формат' })

@@ -20,5 +20,12 @@ export const formatPhone = (value: string): string => {
   if (phoneDigits.length <= 7) return `+7 (${phoneDigits.slice(1, 4)}) ${phoneDigits.slice(4)}`;
   if (phoneDigits.length <= 9)
     return `+7 (${phoneDigits.slice(1, 4)}) ${phoneDigits.slice(4, 7)}-${phoneDigits.slice(7)}`;
+
   return `+7 (${phoneDigits.slice(1, 4)}) ${phoneDigits.slice(4, 7)}-${phoneDigits.slice(7, 9)}-${phoneDigits.slice(9, 11)}`;
+};
+
+export const getCleanPhoneNumber = (value: string): string => {
+  const result = value.replace(/[^\d]/g, '');
+
+  return `+${result}`;
 };

@@ -4,6 +4,7 @@ import { returnValidationErrors } from 'next-safe-action';
 
 import { inputSchema } from '@/lib/constants/rquestForm';
 import prisma from '@/lib/prisma';
+import { getCleanPhoneNumber } from '@/lib/utils/form';
 import { actionClient } from '@/lib/utils/safe-action';
 
 export const sendRequest = actionClient
@@ -15,7 +16,7 @@ export const sendRequest = actionClient
           email: email.trim(),
           message: message.trim(),
           name: name.trim(),
-          phoneNumber: phoneNumber.trim(),
+          phoneNumber: getCleanPhoneNumber(phoneNumber),
           theme: theme.trim(),
         },
       });
