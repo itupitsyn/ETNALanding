@@ -3,8 +3,11 @@ import { FC } from 'react';
 
 import { ID_ABOUT, ID_PROJECTS } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils/cn';
+import { safeScroll } from '@/lib/utils/scroll';
 
+import { AboutUsLink } from './components/AboutUsLink';
 import { BurgerMenu } from './components/BurgerMenu';
+import { ProjectsLink } from './components/ProjectsLink';
 
 interface NavigationProps {
   className?: string;
@@ -25,14 +28,10 @@ export const Navigation: FC<NavigationProps> = ({ className }) => {
         </Link>
         <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
           <li>
-            <Link href={`/#${ID_ABOUT}`} className="transition-colors hover:text-white">
-              О нас
-            </Link>
+            <AboutUsLink />
           </li>
           <li>
-            <Link href={`/#${ID_PROJECTS}`} className="transition-colors hover:text-white">
-              Проекты
-            </Link>
+            <ProjectsLink />
           </li>
         </ul>
       </div>

@@ -6,6 +6,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import { ID_ABOUT, ID_PROJECTS, navigationLinks } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils/cn';
+import { safeScroll } from '@/lib/utils/scroll';
 
 import IconCross from '../../../../lib/assets/icons/cross.svg';
 
@@ -73,8 +74,9 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
               <li>
                 <Link
                   href={`/#${ID_ABOUT}`}
-                  onClick={() => {
+                  onClick={(e) => {
                     setIsOpen(false);
+                    safeScroll(ID_ABOUT, e);
                   }}
                   className="text-menu-text transition-colors hover:text-white"
                 >
@@ -84,8 +86,9 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
               <li>
                 <Link
                   href={`/#${ID_PROJECTS}`}
-                  onClick={() => {
+                  onClick={(e) => {
                     setIsOpen(false);
+                    safeScroll(ID_PROJECTS, e);
                   }}
                   className="text-menu-text transition-colors hover:text-white"
                 >
