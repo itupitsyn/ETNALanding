@@ -17,7 +17,7 @@ export const ETNAProducts: FC = () => {
 
   const commonCardClass = cn(
     'xs:aspect-auto xs:h-[391px] xs:px-2.5 xs:py-3 xs:grow relative flex aspect-square flex-col items-start justify-end px-6 py-5.5 overflow-hidden lg:px-4.5 lg:py-5.5 lg:h-[694px] hover:cursor-pointer',
-    'transition-transform duration-300 hover:scale-103',
+    'transition-transform duration-300 hover:scale-103 active:scale-97 tap-none',
   );
 
   return (
@@ -31,14 +31,14 @@ export const ETNAProducts: FC = () => {
       >
         <MovemateLogo
           className={cn(
-            'xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
+            'xs:w-43.25 tap-none absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
             isInView ? 'animate-appear' : 'opacity-0',
           )}
         />
 
         <p
           className={cn(
-            'text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            'text-lighter xs:text-base tap-none text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
             isInView ? 'animate-appear-right' : 'opacity-0',
           )}
         >
@@ -55,14 +55,14 @@ export const ETNAProducts: FC = () => {
       >
         <SecureLogo
           className={cn(
-            'xs:w-43.25 absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
+            'xs:w-43.25 tap-none absolute top-1/2 left-1/2 h-auto -translate-1/2 lg:w-69.5',
             isInView ? 'animate-appear [animation-delay:300ms]' : 'opacity-0',
           )}
         />
 
         <p
           className={cn(
-            'text-lighter xs:text-base text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            'text-lighter xs:text-base tap-none text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
             isInView ? 'animate-appear-right [animation-delay:200ms]' : 'opacity-0',
           )}
         >
@@ -81,15 +81,15 @@ export const ETNAProducts: FC = () => {
           src={neuroLogo}
           alt=""
           className={cn(
-            'xs:left-[calc(50%+3px)] absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5',
+            'xs:left-[calc(50%+3px)] tap-none absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5',
             isInView ? 'animate-appear [animation-delay:600ms]' : 'opacity-0',
           )}
         />
-        <div className="xs:left-[calc(50%+3px)] group-hover:bg-card-hover-bg/30 absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5" />
+        <div className="xs:left-[calc(50%+3px)] group-hover:bg-card-hover-bg/30 tap-none absolute top-1/2 left-[calc(50%+7px)] h-47.25 w-31.5 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:h-68.25 lg:w-45.5" />
 
         <div
           className={cn(
-            'font-pt-root xs:text-[32px] absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[40px] leading-none tracking-tight lg:text-[56px]',
+            'font-pt-root xs:text-[32px] tap-none absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[40px] leading-none tracking-tight lg:text-[56px]',
             isInView ? 'animate-appear [animation-delay:600ms]' : 'opacity-0',
           )}
         >
@@ -101,7 +101,7 @@ export const ETNAProducts: FC = () => {
 
         <p
           className={cn(
-            'text-lighter xs:text-base z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
+            'text-lighter xs:text-base tap-none z-1 text-[22px] leading-[110%] tracking-tight whitespace-pre lg:text-[28px]',
             isInView ? 'animate-appear-right [animation-delay:400ms]' : 'opacity-0',
           )}
         >
