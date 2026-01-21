@@ -10,7 +10,7 @@ export const NeuroSetHeader: FC = () => {
     <div
       className={cn(
         'xs:max-h-117.5 xs:py-6',
-        'relative container flex h-svh max-h-231.25 flex-col items-start justify-end overflow-hidden bg-[radial-gradient(48.22%_119.67%_at_-10.36%_78.1%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] bg-no-repeat py-8',
+        'relative container flex h-svh max-h-231.25 cursor-default flex-col items-start justify-end overflow-hidden bg-[radial-gradient(48.22%_119.67%_at_-10.36%_78.1%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] bg-no-repeat py-8',
         'lg:max-h-202.5 lg:py-9',
       )}
     >

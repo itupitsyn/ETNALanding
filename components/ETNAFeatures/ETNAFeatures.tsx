@@ -29,7 +29,7 @@ export const ETNAFeatures: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <div ref={ref} className="container overflow-auto px-5 py-8">
+    <div ref={ref} className="container cursor-default overflow-auto px-5 py-8">
       <div className="xs:gap-3 flex justify-between gap-1.5 lg:gap-5">
         {features.map((item, idx, list) => (
           <Fragment key={item.id}>

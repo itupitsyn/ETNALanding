@@ -10,7 +10,7 @@ export const ETNAHeader: FC = () => {
     <div
       className={cn(
         'relative container h-svh w-full bg-[linear-gradient(0deg,rgba(8,19,30,0)_78.02%,rgba(8,19,30,0.72)_90.97%)] bg-position-[0px_-10px] bg-no-repeat',
-        "xs:before:bg-position-[50%_70%] before:bg-size[2000px_auto] before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-logo-bg-optimized.png)] before:bg-bottom before:bg-no-repeat before:content-[''] lg:before:bg-position-[30%_80%]",
+        "xs:before:bg-position-[50%_70%] before:bg-size[2000px_auto] cursor-default before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-logo-bg-optimized.png)] before:bg-bottom before:bg-no-repeat before:content-[''] lg:before:bg-position-[30%_80%]",
         'xs:before:max-h-117.75 before:max-h-231.25 lg:before:max-h-202.5',
         'xs:max-h-117.75 max-h-231.25 lg:max-h-202.5',
       )}

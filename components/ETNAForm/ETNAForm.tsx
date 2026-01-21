@@ -86,7 +86,7 @@ export const ETNAForm: FC = () => {
         ref={ref}
         className="xs:items-start container flex flex-col pb-30 lg:flex-row lg:justify-between lg:gap-x-19"
       >
-        <div className="xs:max-w-158 lg:max-w-145.5">
+        <div className="xs:max-w-158 cursor-default lg:max-w-145.5">
           <h2
             className={cn(
               'xs:text-[40px] text-[32px] leading-[110%] tracking-tight lg:text-[46px]',

@@ -16,7 +16,7 @@ export const ETNAAbout: FC = () => {
     <div
       ref={ref}
       className={cn(
-        'xs:px-5.5 xs:py-6 xs:h-97.5 xs:items-end relative container flex h-124.75 py-10.5 lg:h-152.5 lg:px-6 lg:py-8',
+        'xs:px-5.5 xs:py-6 xs:h-97.5 xs:items-end relative container flex h-124.75 cursor-default py-10.5 lg:h-152.5 lg:px-6 lg:py-8',
         bgClassName,
       )}
       id={ID_ABOUT}
