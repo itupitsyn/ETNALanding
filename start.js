@@ -2,8 +2,8 @@
 console.log('🚀 Запуск всех сервисов...');
 
 // Запускаем лендинг
-const web = Bun.spawn(['bun', 'run', 'start'], {
-  cwd: './server.js',
+const web = Bun.spawn(['bun', 'run', 'server.js'], {
+  cwd: '.',
   stdout: 'inherit',
 });
 

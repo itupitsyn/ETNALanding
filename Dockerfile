@@ -34,7 +34,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/worker ./worker
-COPY --from=builder /app/.start.ts ./
+COPY --from=builder /app/start.js ./
+COPY --from=builder /app/app/generated ./app/generated
+RUN bun add @prisma/client @prisma/adapter-pg
 
 EXPOSE 3000
 
