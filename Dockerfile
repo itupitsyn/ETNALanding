@@ -33,8 +33,10 @@ ENV HOSTNAME="0.0.0.0"
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/worker ./worker
+COPY --from=builder /app/.start.ts ./
 
 EXPOSE 3000
 
 # Запускаем сервер с помощью Bun
-CMD ["bun", "server.js"]
+CMD ["bun", "start.js"]
