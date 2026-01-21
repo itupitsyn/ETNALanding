@@ -21,8 +21,8 @@ const pt_root = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'ETNA',
-  description: 'Создаём цифровые продукты, которые меняют жизнь к лучшему',
+  title: 'ETNA Software - цифровые решения для бизнеса',
+  description: 'Уникальный UX/UI-дизайн, экспертиза в разработке сложных сервисов, стратегия и маркетинг',
 
   icons: {
     icon: [
