@@ -26,18 +26,18 @@ export const ETNASecureFeatures: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <>
+    <main role="main">
       <FeaturesCommon features={features} />
 
       <div ref={ref} className={cn('container', isInView ? 'animate-appear' : 'opacity-0')}>
         <Image
-          src="/images/smartphone.png"
+          src="/images/smartphone.webp"
           alt="tennis"
           width={2860}
           height={1500}
           className="xs:h-104 h-118.25 object-cover lg:h-187.5"
         />
       </div>
-    </>
+    </main>
   );
 };

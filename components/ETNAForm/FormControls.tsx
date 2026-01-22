@@ -134,6 +134,7 @@ export const SubmitButton: FC<{ className?: string }> = ({ className }) => {
 
   return (
     <Button
+      aria-label="Submit request"
       className={cn(
         'xs:px-6.5 xs:py-4 xs:text-sm xs:mt-0 mt-2.5 flex items-center justify-center gap-4 py-3.75 leading-[110%] lg:px-1 lg:py-6.5 lg:text-2xl',
         className,

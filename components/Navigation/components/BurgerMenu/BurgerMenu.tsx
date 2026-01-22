@@ -48,6 +48,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
   return (
     <div className={cn('relative', className)} ref={ref}>
       <button
+        aria-label="Open menu"
         className={'group flex flex-col gap-2 hover:cursor-pointer'}
         onClick={() => {
           setIsOpen((prev) => !prev);
@@ -67,6 +68,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
         >
           <div className="relative flex flex-col gap-10.5 px-7 py-10">
             <button
+              aria-label="Open menu"
               className={cn('absolute right-6 cursor-pointer', isTop ? 'top-6' : 'bottom-6')}
               onClick={() => {
                 setIsOpen((prev) => !prev);

@@ -4,7 +4,7 @@ import { lpAnchor, lph1 } from '@/lib/constants/classes';
 
 export const LegalInformation: FC = () => {
   return (
-    <main className="text-lighter container pt-25 tracking-tight">
+    <main role="main" className="text-lighter container pt-25 tracking-tight">
       <section>
         <div className="mx-auto max-w-225">
           <h1 className={lph1}>Юридическая информация</h1>

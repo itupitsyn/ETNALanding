@@ -8,10 +8,12 @@ export default function Home() {
   return (
     <>
       <ETNAHeader />
-      <ETNAFeatures />
-      <ETNAAbout />
-      <ETNAProducts />
-      <ETNAForm />
+      <main role="main">
+        <ETNAFeatures />
+        <ETNAAbout />
+        <ETNAProducts />
+        <ETNAForm />
+      </main>
     </>
   );
 }

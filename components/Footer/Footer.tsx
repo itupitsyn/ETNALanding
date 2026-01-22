@@ -7,7 +7,10 @@ import { Navigation } from '../Navigation';
 
 export const Footer: FC = () => {
   return (
-    <footer className="xs:mt-26 xs:gap-3.5 relative container mt-14 mb-5 flex flex-col lg:mt-28.5 lg:mb-6 lg:gap-6">
+    <footer
+      role="contentinfo"
+      className="xs:mt-26 xs:gap-3.5 relative container mt-14 mb-5 flex flex-col lg:mt-28.5 lg:mb-6 lg:gap-6"
+    >
       <Navigation />
 
       <div className="gap xs:gap-x-8 xs:flex hidden flex-wrap gap-y-3 lg:gap-x-10.75 lg:gap-y-4">

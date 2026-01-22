@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils/cn';
 
 import SecureLogo from '../../lib/assets/icons/etna-secure-logo.svg';
 import MovemateLogo from '../../lib/assets/icons/movemate-logo.svg';
-import neuroLogo from '../../public/images/neuro-set-logo-bg.png';
+import neuroLogo from '../../public/images/neuro-set-logo-bg.webp';
 
 export const ETNAProducts: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
@@ -25,7 +25,7 @@ export const ETNAProducts: FC = () => {
       <Link
         href="/movemate"
         className={cn(
-          'xs:bg-size-[2000px_auto] bg-[url(/images/movemate-bg.png)] bg-size-[1500px_auto] bg-position-[53%_40%] bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/movemate-bg.png)]',
+          'xs:bg-size-[2000px_auto] bg-[url(/images/movemate-bg.webp)] bg-size-[1500px_auto] bg-position-[53%_40%] bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/movemate-bg.webp)]',
           commonCardClass,
         )}
       >
@@ -49,7 +49,7 @@ export const ETNAProducts: FC = () => {
       <Link
         href="/etna-secure"
         className={cn(
-          'xs:bg-center bg-black bg-[url(/images/secure-bg.png)] bg-size-[700px_auto] bg-top bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/secure-bg.png)]',
+          'xs:bg-center bg-black bg-[url(/images/secure-bg.webp)] bg-size-[700px_auto] bg-top bg-no-repeat hover:bg-[linear-gradient(0deg,#9C9C9C4D,#9C9C9C4D),url(/images/secure-bg.webp)]',
           commonCardClass,
         )}
       >

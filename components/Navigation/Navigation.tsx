@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { ID_ABOUT, ID_PROJECTS } from '@/lib/constants/navigation';
 import { cn } from '@/lib/utils/cn';
-import { safeScroll } from '@/lib/utils/scroll';
 
 import { AboutUsLink } from './components/AboutUsLink';
 import { BurgerMenu } from './components/BurgerMenu';
@@ -16,6 +14,7 @@ interface NavigationProps {
 export const Navigation: FC<NavigationProps> = ({ className }) => {
   return (
     <nav
+      role="navigation"
       className={cn(
         'text-lighter xs:top-3 flex w-full justify-between gap-2 font-light tracking-tighter lg:top-6 lg:text-xl',
         className,

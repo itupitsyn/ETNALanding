@@ -3,11 +3,12 @@ import { FC } from 'react';
 
 import { cn } from '@/lib/utils/cn';
 
-import neuroLogo from '../../public/images/neuro-set-logo-bg.png';
+import neuroLogo from '../../public/images/neuro-set-logo-bg.webp';
 
 export const NeuroSetHeader: FC = () => {
   return (
-    <div
+    <header
+      role="banner"
       className={cn(
         'xs:max-h-117.5 xs:py-6',
         'relative container flex h-svh max-h-231.25 cursor-default flex-col items-start justify-end overflow-hidden bg-[radial-gradient(48.22%_119.67%_at_-10.36%_78.1%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] bg-no-repeat py-8',
@@ -30,6 +31,6 @@ export const NeuroSetHeader: FC = () => {
       <p className="animate-appear text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
         {'Единая платформа\nдля работы с ИИ'}
       </p>
-    </div>
+    </header>
   );
 };

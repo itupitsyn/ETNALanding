@@ -10,7 +10,7 @@ export const ETNAAbout: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const bgClassName =
-    "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-about-bg.png)] before:bg-cover before:bg-center before:bg-no-repeat before:content-['']";
+    "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-about-bg.webp)] before:bg-cover before:bg-center before:bg-no-repeat before:content-['']";
 
   return (
     <div

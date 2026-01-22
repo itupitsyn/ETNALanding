@@ -26,7 +26,7 @@ export const NeuroSetFeatures: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <>
+    <main role="main">
       <FeaturesCommon features={features} />
 
       <div
@@ -34,7 +34,7 @@ export const NeuroSetFeatures: FC = () => {
         className="xs:h-117.5 group relative container h-115.75 overflow-hidden bg-[radial-gradient(88.38%_225.86%_at_96.12%_25.03%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] lg:h-187.5"
       >
         <Image
-          src="/images/computer.png"
+          src="/images/computer.webp"
           alt="tennis"
           width={1585}
           height={1158}
@@ -45,6 +45,6 @@ export const NeuroSetFeatures: FC = () => {
           )}
         />
       </div>
-    </>
+    </main>
   );
 };

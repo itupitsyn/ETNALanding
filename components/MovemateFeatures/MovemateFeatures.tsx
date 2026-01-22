@@ -27,18 +27,18 @@ export const MovemateFeatures: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <>
+    <main role="main">
       <FeaturesCommon features={features} />
 
       <div ref={ref} className={cn('container', isInView ? 'animate-appear' : 'opacity-0')}>
         <Image
-          src="/images/tennis.png"
+          src="/images/tennis.webp"
           alt="tennis"
           width={2200}
           height={1238}
           className="xs:h-auto h-115.75 object-cover object-[35%]"
         />
       </div>
-    </>
+    </main>
   );
 };

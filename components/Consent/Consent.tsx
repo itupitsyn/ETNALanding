@@ -4,7 +4,7 @@ import { lpAnchor, lpdlnested, lph1, lpHeading, lplnested } from '@/lib/constant
 
 export const Consent: FC = () => {
   return (
-    <main className="text-lighter container pt-25 tracking-tight">
+    <main role="main" className="text-lighter container pt-25 tracking-tight">
       <section>
         <div className="mx-auto max-w-225">
           <h1 className={lph1}>Согласие на обработку персональных данных</h1>

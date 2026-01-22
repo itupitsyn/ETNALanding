@@ -4,7 +4,7 @@ import { lpAnchor, lph1, lplnested } from '@/lib/constants/classes';
 
 export const NewsletterConsent: FC = () => {
   return (
-    <main className="text-lighter container pt-25 tracking-tight">
+    <main role="main" className="text-lighter container pt-25 tracking-tight">
       <section>
         <div className="mx-auto max-w-225">
           <h1 className={lph1}>Согласие на получение информационной и рекламной рассылки</h1>
