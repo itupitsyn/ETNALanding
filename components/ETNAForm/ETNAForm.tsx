@@ -25,7 +25,9 @@ import {
 export type RequestFormData = z.infer<typeof inputSchema>;
 
 export const ETNAForm: FC = () => {
-  const [ref, isInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [refH, isInViewH] = useInView({ threshold: 0.5, triggerOnce: true });
+  const [refD, isInViewD] = useInView({ threshold: 0.5, triggerOnce: true });
+  const [refF, isInViewF] = useInView({ threshold: 0.5, triggerOnce: true });
 
   const [isSuccess, setIsSuccess] = useState(false);
   const [unexpectedError, setUnexpectedError] = useState('');
@@ -82,24 +84,23 @@ export const ETNAForm: FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <div
-        ref={ref}
-        className="xs:items-start container flex flex-col pb-30 lg:flex-row lg:justify-between lg:gap-x-19"
-      >
+      <div className="xs:items-start 0 container flex flex-col lg:flex-row lg:justify-between lg:gap-x-19">
         <div className="xs:max-w-158 cursor-default lg:max-w-145.5">
           <h2
+            ref={refH}
             className={cn(
               'xs:text-[40px] text-[32px] leading-[110%] tracking-tight lg:text-[46px]',
-              isInView ? 'animate-appear-up' : 'opacity-0',
+              isInViewH ? 'animate-appear-up' : 'opacity-0',
             )}
           >
             Мы открыты для смелых идей и коллабораций.
           </h2>
 
           <p
+            ref={refD}
             className={cn(
               'xs:text-[26px] xs:font-light text-[18px] leading-[110%] tracking-tight lg:text-[32px] lg:tracking-tighter',
-              isInView ? 'animate-appear-up [animation-delay:300ms]' : 'opacity-0',
+              isInViewD ? 'animate-appear-up [animation-delay:300ms]' : 'opacity-0',
             )}
           >
             <br />
@@ -109,50 +110,72 @@ export const ETNAForm: FC = () => {
         </div>
 
         <form
-          className="xs:mt-10.5 xs:self-stretch mt-15 flex flex-col lg:mt-0 lg:max-w-none lg:min-w-137.5 lg:grow"
+          ref={refF}
           id={ID_CONTACT_US}
+          className="xs:mt-10.5 xs:self-stretch mt-15 flex flex-col lg:mt-0 lg:max-w-none lg:min-w-137.5 lg:grow"
           noValidate
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="xs:hidden flex flex-col gap-8">
             <div className="xs:hidden flex flex-col gap-5.5">
-              <PhoneInput />
-              <EmailInput />
-              <NameInput />
-              <ThemeInput />
-              <MessageInput />
+              <PhoneInput className={cn(isInViewF ? 'animate-appear-right' : 'opacity-0')} />
+              <EmailInput className={cn(isInViewF ? 'animate-appear-right [animation-delay:200ms]' : 'opacity-0')} />
+              <NameInput className={cn(isInViewF ? 'animate-appear-right [animation-delay:400ms]' : 'opacity-0')} />
+              <ThemeInput className={cn(isInViewF ? 'animate-appear-right [animation-delay:600ms]' : 'opacity-0')} />
+              <MessageInput
+                rootClassName={cn(isInViewF ? 'animate-appear-right [animation-delay:800ms]' : 'opacity-0')}
+              />
             </div>
 
             <div className="xs:hidden flex flex-col gap-2.5">
-              <SubmitButton />
-              <AgreementCheckbox />
+              <SubmitButton className="animate-appear-up [animation-delay:1000ms]" />
+              <AgreementCheckbox className="animate-appear-up [animation-delay:1200ms]" />
             </div>
           </div>
 
           <div className="xs:grid hidden max-w-158 grid-cols-2 items-end gap-5.5 lg:hidden">
-            <NameInput />
-            <PhoneInput />
-            <EmailInput />
-            <ThemeInput />
-            <MessageInput />
-            <SubmitButton className="justify-self-start" />
+            <NameInput className={cn(isInViewF ? 'animate-appear-right [animation-delay:0ms]' : 'opacity-0')} />
+            <PhoneInput className={cn(isInViewF ? 'animate-appear-left [animation-delay:0ms]' : 'opacity-0')} />
+            <EmailInput className={cn(isInViewF ? 'animate-appear-right [animation-delay:200ms]' : 'opacity-0')} />
+            <ThemeInput className={cn(isInViewF ? 'animate-appear-left [animation-delay:200ms]' : 'opacity-0')} />
+            <MessageInput
+              rootClassName={cn(isInViewF ? 'animate-appear-right [animation-delay:400ms]' : 'opacity-0')}
+            />
+            <SubmitButton
+              className={cn(
+                'justify-self-start',
+                isInViewF ? 'animate-appear-left [animation-delay:400ms]' : 'opacity-0',
+              )}
+            />
           </div>
 
           <div className="xs:grid hidden grid-cols-[minmax(0,305px)_minmax(0,500px)] gap-5.5 pt-3 lg:hidden">
             <div className="" />
-            <AgreementCheckbox />
+            <AgreementCheckbox
+              className={cn(isInViewF ? 'animate-appear-left [animation-delay:600ms]' : 'opacity-0')}
+            />
           </div>
 
           <div className="hidden grid-cols-2 items-end gap-5.5 lg:grid">
-            <NameInput />
-            <ThemeInput />
+            <NameInput className={cn(isInViewF ? 'animate-appear-up [animation-delay:0ms]' : 'opacity-0')} />
+            <ThemeInput className={cn(isInViewF ? 'animate-appear-left [animation-delay:0ms]' : 'opacity-0')} />
             <div className="flex flex-col gap-5.5 self-start">
-              <PhoneInput />
-              <EmailInput />
+              <PhoneInput className={cn(isInViewF ? 'animate-appear-up [animation-delay:200ms]' : 'opacity-0')} />
+              <EmailInput className={cn(isInViewF ? 'animate-appear-up [animation-delay:400ms]' : 'opacity-0')} />
             </div>
-            <MessageInput className="max-h-31.25" />
-            <AgreementCheckbox className="self-start" />
-            <SubmitButton className="justify-self-stretch" />
+            <MessageInput
+              className="max-h-31.25"
+              rootClassName={cn(isInViewF ? 'animate-appear-left [animation-delay:300ms]' : 'opacity-0')}
+            />
+            <AgreementCheckbox
+              className={cn('self-start', isInViewF ? 'animate-appear-up [animation-delay:600ms]' : 'opacity-0')}
+            />
+            <SubmitButton
+              className={cn(
+                'justify-self-stretch',
+                isInViewF ? 'animate-appear-left [animation-delay:600ms]' : 'opacity-0',
+              )}
+            />
           </div>
         </form>
       </div>

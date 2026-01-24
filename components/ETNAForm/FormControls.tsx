@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ChangeEvent, FC } from 'react';
+import { ChangeEvent, CSSProperties, FC } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 import { cn } from '@/lib/utils/cn';
@@ -12,7 +12,12 @@ import { Input } from '../ui/Input';
 import { TextArea } from '../ui/TextArea';
 import { RequestFormData } from './ETNAForm';
 
-export const PhoneInput: FC = () => {
+interface ControlProps {
+  className?: string;
+  style?: CSSProperties;
+}
+
+export const PhoneInput: FC<ControlProps> = ({ className, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -26,6 +31,8 @@ export const PhoneInput: FC = () => {
             const formatted = formatPhone(e.target.value);
             field.onChange(formatted);
           }}
+          className={className}
+          style={style}
           isInvalid={invalid}
           errorText={error?.message}
           placeholder="Телефон"
@@ -35,7 +42,7 @@ export const PhoneInput: FC = () => {
   );
 };
 
-export const EmailInput: FC = () => {
+export const EmailInput: FC<ControlProps> = ({ className, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -43,13 +50,20 @@ export const EmailInput: FC = () => {
       control={control}
       name="email"
       render={({ field, fieldState: { invalid, error } }) => (
-        <Input {...field} isInvalid={invalid} errorText={error?.message} placeholder="Почта" />
+        <Input
+          {...field}
+          isInvalid={invalid}
+          errorText={error?.message}
+          placeholder="Почта"
+          className={className}
+          style={style}
+        />
       )}
     />
   );
 };
 
-export const NameInput: FC = () => {
+export const NameInput: FC<ControlProps> = ({ className, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -57,13 +71,20 @@ export const NameInput: FC = () => {
       control={control}
       name="name"
       render={({ field, fieldState: { invalid, error } }) => (
-        <Input {...field} isInvalid={invalid} errorText={error?.message} placeholder="Имя" />
+        <Input
+          {...field}
+          isInvalid={invalid}
+          errorText={error?.message}
+          placeholder="Имя"
+          className={className}
+          style={style}
+        />
       )}
     />
   );
 };
 
-export const ThemeInput: FC = () => {
+export const ThemeInput: FC<ControlProps> = ({ className, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -71,13 +92,20 @@ export const ThemeInput: FC = () => {
       control={control}
       name="theme"
       render={({ field, fieldState: { invalid, error } }) => (
-        <Input {...field} isInvalid={invalid} errorText={error?.message} placeholder="Тема" />
+        <Input
+          {...field}
+          isInvalid={invalid}
+          errorText={error?.message}
+          placeholder="Тема"
+          className={className}
+          style={style}
+        />
       )}
     />
   );
 };
 
-export const MessageInput: FC<{ className?: string }> = ({ className }) => {
+export const MessageInput: FC<ControlProps & { rootClassName?: string }> = ({ className, rootClassName, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -91,6 +119,8 @@ export const MessageInput: FC<{ className?: string }> = ({ className }) => {
           errorText={error?.message}
           placeholder="Сообщение"
           className={cn('resize-none', className)}
+          rootClassName={rootClassName}
+          style={style}
           rows={5}
         />
       )}
@@ -98,7 +128,7 @@ export const MessageInput: FC<{ className?: string }> = ({ className }) => {
   );
 };
 
-export const AgreementCheckbox: FC<{ className?: string }> = ({ className }) => {
+export const AgreementCheckbox: FC<ControlProps> = ({ className, style }) => {
   const { control } = useFormContext<RequestFormData>();
 
   return (
@@ -113,6 +143,7 @@ export const AgreementCheckbox: FC<{ className?: string }> = ({ className }) => 
           isInvalid={invalid}
           errorText={error?.message}
           className={className}
+          style={style}
         >
           <span className="text-sm leading-[110%] tracking-tight lg:pt-0.5 lg:text-base">
             Даю{' '}
@@ -127,7 +158,7 @@ export const AgreementCheckbox: FC<{ className?: string }> = ({ className }) => 
   );
 };
 
-export const SubmitButton: FC<{ className?: string }> = ({ className }) => {
+export const SubmitButton: FC<ControlProps> = ({ className, style }) => {
   const {
     formState: { isSubmitting },
   } = useFormContext<RequestFormData>();
@@ -136,9 +167,10 @@ export const SubmitButton: FC<{ className?: string }> = ({ className }) => {
     <Button
       aria-label="Submit request"
       className={cn(
-        'xs:px-6.5 xs:py-4 xs:text-sm xs:mt-0 mt-2.5 flex items-center justify-center gap-4 py-3.75 leading-[110%] lg:px-1 lg:py-6.5 lg:text-2xl',
+        'xs:px-6.5 xs:py-4 xs:text-sm xs:mt-0 xs:min-h-auto mt-2.5 flex min-h-15 items-center justify-center gap-4 py-3.75 leading-[110%] lg:px-1 lg:py-6.5 lg:text-2xl',
         className,
       )}
+      style={style}
       disabled={isSubmitting}
     >
       Отправить <ArrowIcon className="flex-none" />

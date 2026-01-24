@@ -20,9 +20,28 @@ export const ETNAAbout: FC = () => {
       )}
       id={ID_ABOUT}
     >
-      <div
+      <p
         ref={ref}
-        className="text-lighter xs:text-[26px] xs:flex flex-col text-[28px] leading-[110%] font-light tracking-tighter lg:text-[42px]"
+        className="text-lighter xs:hidden flex flex-col text-[28px] leading-[110%] font-light tracking-tighter"
+      >
+        <span className={cn(isInView ? 'animate-appear-up' : 'opacity-0')}>Мы — компания, </span>
+
+        <span className={cn(isInView ? 'animate-appear-up [animation-delay:200ms]' : 'opacity-0')}>
+          где идеи превращаются
+        </span>
+
+        <span className={cn(isInView ? 'animate-appear-up [animation-delay:400ms]' : 'opacity-0')}>в работающие</span>
+
+        <span className={cn(isInView ? 'animate-appear-up [animation-delay:600ms]' : 'opacity-0')}>
+          и востребованные
+        </span>
+
+        <span className={cn(isInView ? 'animate-appear-up [animation-delay:800ms]' : 'opacity-0')}>решения.</span>
+      </p>
+
+      <p
+        ref={ref}
+        className="text-lighter xs:text-[26px] xs:flex hidden flex-col text-[28px] leading-[110%] font-light tracking-tighter lg:text-[42px]"
       >
         <span className={cn(isInView ? 'animate-appear-up' : 'opacity-0')}>Мы — компания, где идеи </span>
         <span className={cn(isInView ? 'animate-appear-up [animation-delay:300ms]' : 'opacity-0')}>
@@ -31,7 +50,7 @@ export const ETNAAbout: FC = () => {
         <span className={cn(isInView ? 'animate-appear-up [animation-delay:600ms]' : 'opacity-0')}>
           и востребованные решения.
         </span>
-      </div>
+      </p>
     </div>
   );
 };

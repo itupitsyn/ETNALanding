@@ -8,18 +8,20 @@ interface TextareaComponentProps extends DetailedHTMLProps<
 > {
   isInvalid?: boolean;
   errorText?: string;
+  rootClassName?: string;
 }
 
 const Component: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaComponentProps> = (
-  { className, placeholder, isInvalid, errorText, ...props },
+  { className, rootClassName, placeholder, isInvalid, errorText, ...props },
   ref,
 ) => {
   return (
     <div
       style={{ '--placeholder-text': placeholder ? `"${placeholder}"` : undefined } as CSSProperties}
-      className={
-        'after:text-input-border relative after:pointer-events-none after:absolute after:bottom-5.25 after:left-1 after:leading-[110%] after:content-(--placeholder-text) has-focus:after:hidden has-[:not(:placeholder-shown)]:after:hidden after:lg:text-xl'
-      }
+      className={cn(
+        'after:text-input-border relative after:pointer-events-none after:absolute after:bottom-5.25 after:left-1 after:leading-[110%] after:content-(--placeholder-text) has-focus:after:hidden has-[:not(:placeholder-shown)]:after:hidden after:lg:text-xl',
+        rootClassName,
+      )}
     >
       <textarea
         ref={ref}
