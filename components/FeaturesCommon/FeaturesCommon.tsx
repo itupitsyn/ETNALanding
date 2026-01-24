@@ -29,7 +29,7 @@ export const FeaturesCommon: FC<FeaturesCommonProps> = ({ features }) => {
                 'xs:border-t xs:border-b xs:border-solid xs:border-border xs:w-55 xs:min-h-52.25 xs:px-3 xs:py-4 xs:gap-20',
                 'flex min-h-73.5 flex-none grow flex-col gap-30 px-4 py-5.5',
                 'lg:min-h-83.75 lg:gap-27.5 lg:px-5.5 lg:py-7',
-                isInView ? 'animate-appear' : 'opacity-0',
+                isInView ? 'animate-appear-up' : 'opacity-0',
               )}
             >
               <h2 className="xs:text-[26px] text-[32px] leading-[110%] tracking-tight whitespace-pre lg:text-5xl">

@@ -50,7 +50,7 @@ const Component: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       </label>
 
       {errorText && (
-        <div className="text-error absolute top-[110%] left-0 text-xs leading-[120%] font-light">{errorText}</div>
+        <div className="text-error absolute top-[130%] left-0 text-xs leading-[120%] font-light">{errorText}</div>
       )}
     </div>
   );

@@ -29,7 +29,7 @@ export const ETNASecureFeatures: FC = () => {
     <main role="main">
       <FeaturesCommon features={features} />
 
-      <div ref={ref} className={cn('container', isInView ? 'animate-appear' : 'opacity-0')}>
+      <div ref={ref} className={cn('container', isInView ? 'animate-appear-up' : 'opacity-0')}>
         <Image
           src="/images/smartphone.webp"
           alt="tennis"

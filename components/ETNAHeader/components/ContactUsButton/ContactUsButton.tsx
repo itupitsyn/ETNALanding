@@ -9,7 +9,7 @@ import { safeScroll } from '@/lib/utils/scroll';
 export const ContactUsButton: FC = () => {
   return (
     <LinkButton
-      className="xs:py-4 flex justify-center px-10.25 py-3.75 lg:px-12 lg:py-6"
+      className="xs:py-4 animate-appear-left flex justify-center px-10.25 py-3.75 lg:px-12 lg:py-6"
       href={`#${ID_CONTACT_US}`}
       onClick={(e) => {
         safeScroll(ID_CONTACT_US, e);

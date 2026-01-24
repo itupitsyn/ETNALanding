@@ -90,16 +90,16 @@ export const ETNAForm: FC = () => {
           <h2
             className={cn(
               'xs:text-[40px] text-[32px] leading-[110%] tracking-tight lg:text-[46px]',
-              isInView ? 'animate-appear' : 'opacity-0',
+              isInView ? 'animate-appear-up' : 'opacity-0',
             )}
           >
-            Мы открыты для смелых идей и коллабораций.
+            Мы открыты для смелых идей и коллабораций.
           </h2>
 
           <p
             className={cn(
               'xs:text-[26px] xs:font-light text-[18px] leading-[110%] tracking-tight lg:text-[32px] lg:tracking-tighter',
-              isInView ? 'animate-appear [animation-delay:300ms]' : 'opacity-0',
+              isInView ? 'animate-appear-up [animation-delay:300ms]' : 'opacity-0',
             )}
           >
             <br />

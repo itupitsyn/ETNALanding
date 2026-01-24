@@ -28,7 +28,7 @@ export const NeuroSetHeader: FC = () => {
         <span className="text-lighter relative">Set</span>
       </div>
 
-      <p className="animate-appear text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
+      <p className="animate-appear-up text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
         {'Единая платформа\nдля работы с ИИ'}
       </p>
     </header>

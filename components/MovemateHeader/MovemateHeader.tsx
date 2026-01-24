@@ -10,7 +10,7 @@ export const MovemateHeader: FC = () => {
     >
       <MovemateLogo className="xs:w-85 animate-appear-right absolute top-1/2 left-1/2 h-auto w-79.25 -translate-1/2 lg:w-137.5" />
 
-      <p className="text-lighter animate-appear text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
+      <p className="text-lighter animate-appear-up text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
         {'Онлайн-сервис\nдля бронирования'}
       </p>
     </header>

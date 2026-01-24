@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { FC, useEffect, useRef, useState } from 'react';
-import { useMediaQuery } from 'usehooks-ts';
 
 import { ID_ABOUT, ID_PROJECTS, navigationLinks } from '@/lib/constants/navigation';
+import { useIsMobile } from '@/lib/hooks/useIsMoblile';
 import { cn } from '@/lib/utils/cn';
 import { safeScroll } from '@/lib/utils/scroll';
 
@@ -17,12 +17,7 @@ interface BurgerMenuProps {
 export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  let maxWidth = '';
-  if (typeof window !== 'undefined') {
-    maxWidth = window.getComputedStyle(document.body).getPropertyValue('--breakpoint-xs');
-  }
-
-  const isMobile = !useMediaQuery(`(min-width: ${maxWidth})`);
+  const isMobile = useIsMobile();
   const [prevIsMobile, setPrevIsMobile] = useState(isMobile);
 
   if (prevIsMobile !== isMobile) {
@@ -62,7 +57,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
       {isOpen && (
         <div
           className={cn(
-            'bg-background animate-appear absolute -right-4 w-screen max-w-88',
+            'bg-background animate-appear-up absolute -right-4 w-screen max-w-88',
             isTop ? '-top-6' : '-bottom-4',
           )}
         >

@@ -21,21 +21,24 @@ export const Navigation: FC<NavigationProps> = ({ className }) => {
       )}
     >
       <div className="xs:gap-10.5 flex gap-8 lg:gap-27">
-        <Link href="/" className="transition-colors hover:text-white">
+        <Link href="/" className="animate-appear-down transition-colors hover:text-white">
           <span className="font-bold">ETNA</span>
           <span>SOFTWARE</span>
         </Link>
         <ul className="xs:flex hidden gap-8 whitespace-nowrap lg:gap-10.75">
-          <li>
+          <li className="animate-appear-down [animation-delay:300ms]">
             <AboutUsLink />
           </li>
-          <li>
+          <li className="animate-appear-down [animation-delay:600ms]">
             <ProjectsLink />
           </li>
         </ul>
       </div>
 
-      <Link href="mailto:corp@etna.software" className="xs:block hidden transition-colors hover:text-white">
+      <Link
+        href="mailto:corp@etna.software"
+        className="xs:block animate-appear-down hidden transition-colors [animation-delay:200ms] hover:text-white"
+      >
         corp@etna.software
       </Link>
 
