@@ -15,7 +15,7 @@ interface ETNAProductProps {
 }
 
 export const ETNAProduct: FC<ETNAProductProps> = ({ className, href, logo, text, animationDelay = 0 }) => {
-  const [refL, isInViewL] = useInView({ threshold: 1, triggerOnce: true });
+  const [refL, isInViewL] = useInView({ threshold: 0.5, triggerOnce: true });
   const [refT, isInViewT] = useInView({ threshold: 0.5, triggerOnce: true });
 
   const logoCloned = cloneElement(logo, {
