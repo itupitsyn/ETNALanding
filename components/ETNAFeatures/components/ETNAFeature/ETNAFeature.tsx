@@ -30,7 +30,7 @@ export const ETNAFeature: FC<ETNAFeatureProps> = ({ header, text, className, tex
         }}
         ref={refH}
         className={cn(
-          'xs:text-[26px] text-[32px] leading-[110%] tracking-tight whitespace-pre lg:text-5xl',
+          'xs:text-[26px] text-[32px] leading-[110%] tracking-tighter whitespace-pre lg:text-5xl',
           isInViewH ? 'animate-appear-up' : 'opacity-0',
         )}
       >
