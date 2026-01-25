@@ -39,7 +39,9 @@ export const NeuroSetFeatures: FC = () => {
           width={1585}
           height={1158}
           className={cn(
-            'xs:w-175 xs:top-10 absolute top-20 left-[50%] w-137.5 max-w-none -translate-x-1/2 object-cover lg:top-20 lg:w-300',
+            'xs:w-170 xs:top-[13.5%] xs:left-[54.5%] xs:scale-y-110',
+            'absolute top-[18%] left-[56%] w-130 max-w-none -translate-x-1/2 object-cover',
+            'lg:top-[8%] lg:left-[52.5%] lg:w-304 lg:scale-y-100',
             isInView ? 'animate-appear-up' : 'opacity-0',
           )}
         />
