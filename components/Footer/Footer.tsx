@@ -26,7 +26,7 @@ export const Footer: FC = () => {
             key={item.id}
             href={item.href}
             className={cn(
-              'text-link cursor-pointer text-[14px] leading-[120%] tracking-tight transition-colors hover:text-white lg:text-[18px]',
+              'text-link cursor-pointer text-[14px] leading-[120%] font-light tracking-tight transition-colors hover:text-white lg:text-[18px]',
               isInView ? 'animate-appear-up' : 'opacity-0',
             )}
             style={{

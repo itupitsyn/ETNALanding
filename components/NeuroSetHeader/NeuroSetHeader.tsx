@@ -1,13 +1,19 @@
+'use client';
+
 import Image from 'next/image';
 import { FC } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { cn } from '@/lib/utils/cn';
 
 import neuroLogo from '../../public/images/neuro-set-logo-bg.webp';
 
 export const NeuroSetHeader: FC = () => {
+  const [ref, isInView] = useInView({ threshold: 0.3, triggerOnce: true });
+
   return (
     <header
+      ref={ref}
       role="banner"
       className={cn(
         'xs:max-h-117.5 xs:py-6',
@@ -18,17 +24,27 @@ export const NeuroSetHeader: FC = () => {
       <Image
         src={neuroLogo}
         alt=""
-        className="animate-appear-right xs:left-[calc(50%+3px)] xs:w-55.75 absolute top-1/2 left-[calc(50%+7px)] h-auto w-46.75 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:w-77"
+        className="xs:left-[calc(50%+3px)] xs:w-55.75 absolute top-1/2 left-[calc(50%+7px)] h-auto w-46.75 -translate-y-1/2 lg:left-[calc(50%+14px)] lg:w-77"
       />
 
-      <div className="animate-appear-right font-pt-root xs:text-[70px] absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[58px] leading-none tracking-tight lg:text-[96px]">
+      <div
+        className={cn(
+          'font-pt-root xs:text-[70px] absolute top-1/2 left-1/2 flex -translate-1/2 gap-4.5 text-[58px] leading-none tracking-tight lg:text-[96px]',
+          isInView ? 'animate-appear-right' : 'opacity-0',
+        )}
+      >
         <span className="bg-[linear-gradient(337.78deg,rgba(89,96,112,0)_38.41%,rgba(89,96,112,0.8)_106.93%),linear-gradient(0deg,#E6E6E6,#E6E6E6)] bg-clip-text text-transparent">
           Нейро
         </span>
         <span className="text-lighter relative">Set</span>
       </div>
 
-      <p className="animate-appear-up text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre [animation-delay:300ms] lg:text-[28px]">
+      <p
+        className={cn(
+          'text-lighter text-2xl leading-[110%] font-light tracking-tight whitespace-pre lg:text-[28px]',
+          isInView ? 'animate-appear-up [animation-delay:300ms]' : 'opacity-0',
+        )}
+      >
         {'Единая платформа\nдля работы с ИИ'}
       </p>
     </header>

@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className="scroll-smooth">
       <body className={cn(inter.variable, pt_root.variable, 'min-w-75 font-sans')}>
-        <div className="absolute top-5 left-0 z-10 w-full">
+        <div className="xs:top-3.5 absolute top-5 left-0 z-10 w-full lg:top-6">
           <Navigation className="container py-3" />
         </div>
 

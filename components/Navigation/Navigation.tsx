@@ -15,10 +15,7 @@ export const Navigation: FC<NavigationProps> = ({ className }) => {
   return (
     <nav
       role="navigation"
-      className={cn(
-        'text-lighter xs:top-3 flex w-full justify-between gap-2 font-light tracking-tighter lg:top-6 lg:text-xl',
-        className,
-      )}
+      className={cn('text-lighter flex w-full justify-between gap-2 font-light tracking-tighter lg:text-xl', className)}
     >
       <div className="xs:gap-10.5 flex gap-8 lg:gap-27">
         <Link href="/" className="animate-appear-down transition-colors hover:text-white">

@@ -10,10 +10,11 @@ export const ETNAHeader: FC = () => {
     <header
       role="banner"
       className={cn(
-        'relative container h-svh w-full bg-[linear-gradient(0deg,rgba(8,19,30,0)_78.02%,rgba(8,19,30,0.72)_90.97%)] bg-position-[0px_-10px] bg-no-repeat',
-        "xs:before:bg-position-[50%_70%] before:bg-size[2000px_auto] cursor-default before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-logo-bg-optimized.webp)] before:bg-bottom before:bg-no-repeat before:content-[''] lg:before:bg-position-[30%_80%]",
-        'before:animate-appear-down-long',
-        'max-h-380 before:max-h-380',
+        'relative container h-svh w-full cursor-default bg-[linear-gradient(0deg,rgba(8,19,30,0)_78.02%,rgba(8,19,30,0.72)_90.97%)] bg-position-[0px] bg-no-repeat',
+        'xs:bg-position-[0px] xs:before:bg-size-[1130px_auto] xs:before:bg-position-[32%_90%] xs:max-h-157.5 xs:before:max-h-157.5',
+        'before:animate-appear-down-long before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-logo-bg-optimized.webp)] before:bg-size-[1650px_auto] before:bg-position-[63.5%_90%] before:bg-no-repeat before:content-[""]',
+        'lg:max-h-270 lg:bg-position-[0px_-20px] lg:before:max-h-270 lg:before:bg-size-[1940px_auto] lg:before:bg-position-[32%_90%]',
+        'max-h-200 before:max-h-200',
       )}
     >
       <div className="xs:pb-4.5 flex h-full flex-col justify-end pb-14 lg:pb-8">

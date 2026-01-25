@@ -9,14 +9,12 @@ import { cn } from '@/lib/utils/cn';
 export const ETNAAbout: FC = () => {
   const [ref, isInView] = useInView({ threshold: 0.7, triggerOnce: true });
 
-  const bgClassName =
-    "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:rotate-180 before:bg-[url(/images/etna-about-bg.webp)] before:bg-cover before:bg-center before:bg-no-repeat before:content-['']";
-
   return (
     <div
       className={cn(
         'xs:px-5.5 xs:py-6 xs:h-97.5 xs:items-end relative container flex h-124.75 cursor-default py-10.5 lg:h-152.5 lg:px-6 lg:py-8',
-        bgClassName,
+        'xs:before:bg-center xs:before:bg-cover',
+        "before:absolute before:top-0 before:left-0 before:z-[-1] before:h-full before:w-full before:-scale-x-100 before:bg-[url(/images/etna-about-bg.webp)] before:bg-size-[1000px_auto] before:bg-position-[60%_20%] before:bg-no-repeat before:content-['']",
       )}
       id={ID_ABOUT}
     >

@@ -24,7 +24,7 @@ const features = [
 ];
 
 export const MovemateFeatures: FC = () => {
-  const [ref, isInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ref, isInView] = useInView({ threshold: 0.4, triggerOnce: true });
 
   return (
     <main role="main">
@@ -36,7 +36,7 @@ export const MovemateFeatures: FC = () => {
           alt="tennis"
           width={2200}
           height={1238}
-          className="xs:h-auto h-115.75 object-cover object-[35%]"
+          className="xs:h-117.5 xs:object-top h-115.75 object-cover object-[35%] lg:h-187.5"
         />
       </div>
     </main>
