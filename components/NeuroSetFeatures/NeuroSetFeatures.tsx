@@ -31,7 +31,7 @@ export const NeuroSetFeatures: FC = () => {
 
       <div
         ref={ref}
-        className="xs:h-117.5 relative container h-115.75 overflow-hidden bg-[radial-gradient(88.38%_225.86%_at_96.12%_25.03%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] lg:h-187.5"
+        className="xs:h-117.5 xs:mb-6 lg_mb-8 relative container mb-8 h-115.75 overflow-hidden bg-[radial-gradient(88.38%_225.86%_at_96.12%_25.03%,rgba(135,168,209,0.3)_0%,rgba(0,0,0,0)_100%),linear-gradient(0deg,#00081D,#00081D)] lg:h-187.5"
       >
         <Image
           src="/images/computer.webp"

@@ -84,7 +84,7 @@ export const ETNAForm: FC = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="xs:items-start 0 container flex flex-col overflow-hidden lg:flex-row lg:justify-between lg:gap-x-19">
+      <div className="xs:items-start 0 xs:mb-18.75 container mb-5 flex flex-col overflow-hidden lg:mb-28.5 lg:flex-row lg:justify-between lg:gap-x-19">
         <div className="xs:max-w-158 cursor-default lg:max-w-145.5">
           <h2
             ref={refH}

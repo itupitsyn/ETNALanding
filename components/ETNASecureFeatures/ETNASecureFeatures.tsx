@@ -29,13 +29,13 @@ export const ETNASecureFeatures: FC = () => {
     <main role="main">
       <FeaturesCommon features={features} />
 
-      <div ref={ref} className={cn('container', isInView ? 'animate-appear-up' : 'opacity-0')}>
+      <div ref={ref} className={cn('xs:mb-6 lg_mb-8 container mb-8', isInView ? 'animate-appear-up' : 'opacity-0')}>
         <Image
           src="/images/smartphone.webp"
           alt="tennis"
           width={2860}
           height={1500}
-          className="xs:h-104 h-118.25 object-cover lg:h-187.5"
+          className="xs:h-224 h-118.25 object-cover lg:h-187.5"
         />
       </div>
     </main>

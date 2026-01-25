@@ -30,7 +30,7 @@ export const MovemateFeatures: FC = () => {
     <main role="main">
       <FeaturesCommon features={features} />
 
-      <div ref={ref} className={cn('container', isInView ? 'animate-appear-up' : 'opacity-0')}>
+      <div ref={ref} className={cn('xs:mb-6 lg_mb-8 container mb-8', isInView ? 'animate-appear-up' : 'opacity-0')}>
         <Image
           src="/images/tennis.webp"
           alt="tennis"

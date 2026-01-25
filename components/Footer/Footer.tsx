@@ -16,7 +16,7 @@ export const Footer: FC = () => {
     <footer
       ref={ref}
       role="contentinfo"
-      className="xs:mt-18.75 xs:gap-3.5 xs:py-4.75 relative container my-5 flex flex-col py-3 lg:mt-28.5 lg:mb-6 lg:gap-6 lg:py-6"
+      className="xs:gap-3.5 xs:py-4.75 relative container mb-5 flex flex-col py-3 lg:mb-6 lg:gap-6 lg:py-6"
     >
       <Navigation />
 
