@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, RefObject, useEffect, useRef, useState } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import { ID_ABOUT, ID_PROJECTS, navigationLinks } from '@/lib/constants/navigation';
 import { useIsMobile } from '@/lib/hooks/useIsMoblile';
@@ -28,6 +29,10 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ className }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const [isTop, setIsTop] = useState(true);
+
+  useOnClickOutside(ref as RefObject<HTMLElement>, () => {
+    setIsOpen(false);
+  });
 
   useEffect(() => {
     if (typeof window == 'undefined' || !ref.current) {
